@@ -1,0 +1,146 @@
+\contentsline {chapter}{\numberline {第1章}導入}{4}{chapter.1}
+\contentsline {chapter}{\numberline {第2章}AdS$_3$/CFT$_2$対応}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}共形対称性}{9}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}古典的共形対称性}{9}{subsection.2.1.1}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {共形変換・Weyl変換の定義}}\mathsurround \z@ $\hbox {}\relax }{9}{section*.6}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {共形Killing方程式}}\mathsurround \z@ $\hbox {}\relax }{10}{section*.7}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {作用の古典的共形対称性}}\mathsurround \z@ $\hbox {}\relax }{14}{section*.8}
+\contentsline {subsection}{\numberline {2.1.2}Weylアノマリー}{15}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}2次元共形場理論(CFT$_2$)}{16}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}プライマリー場}{16}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}共形Ward恒等式}{17}{subsection.2.2.2}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {エネルギー運動量テンソルの正則性}}\mathsurround \z@ $\hbox {}\relax }{18}{section*.9}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {大域的共形変換}}\mathsurround \z@ $\hbox {}\relax }{18}{section*.10}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {2つの$T$の挿入に対する共形Ward恒等式}}\mathsurround \z@ $\hbox {}\relax }{19}{section*.11}
+\contentsline {subsection}{\numberline {2.2.3}演算子積展開}{20}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Virasoro代数}{21}{subsection.2.2.4}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {交換関係}}\mathsurround \z@ $\hbox {}\relax }{21}{section*.12}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {ユニタリー共形場理論}}\mathsurround \z@ $\hbox {}\relax }{23}{section*.13}
+\contentsline {subsection}{\numberline {2.2.5}共形境界条件と二重化のトリック}{23}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}Cardy公式}{24}{subsection.2.2.6}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {カノニカル分布を用いる方法}}\mathsurround \z@ $\hbox {}\relax }{25}{section*.14}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {ミクロカノニカル分布を用いる方法}}\mathsurround \z@ $\hbox {}\relax }{26}{section*.15}
+\contentsline {section}{\numberline {2.3}2次元零質量自由スカラー場}{27}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}頂点演算子}{27}{subsection.2.3.1}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {正規順序}}\mathsurround \z@ $\hbox {}\relax }{27}{section*.16}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {エネルギー運動量テンソル}}\mathsurround \z@ $\hbox {}\relax }{28}{section*.17}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {頂点演算子}}\mathsurround \z@ $\hbox {}\relax }{29}{section*.18}
+\contentsline {subsection}{\numberline {2.3.2}共形境界条件と二重化のトリック}{29}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}頂点演算子の相関関数}{30}{subsection.2.3.3}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {グリーン関数の一般論}}\mathsurround \z@ $\hbox {}\relax }{30}{section*.19}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {球面・平面での相関関数}}\mathsurround \z@ $\hbox {}\relax }{32}{section*.20}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {上半平面での相関関数}}\mathsurround \z@ $\hbox {}\relax }{32}{section*.21}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {トーラスでの相関関数}}\mathsurround \z@ $\hbox {}\relax }{33}{section*.22}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {有限の長さの円筒での相関関数}}\mathsurround \z@ $\hbox {}\relax }{35}{section*.23}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {正則・反正則部分でウェイトが異なる場合}}\mathsurround \z@ $\hbox {}\relax }{36}{section*.24}
+\contentsline {subsection}{\numberline {2.3.4}分配関数}{38}{subsection.2.3.4}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {トーラス分配関数}}\mathsurround \z@ $\hbox {}\relax }{38}{section*.25}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {円筒分配関数}}\mathsurround \z@ $\hbox {}\relax }{39}{section*.26}
+\contentsline {section}{\numberline {2.4}2次元零質量自由Dirac場}{39}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}理論の定義}{40}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}スピン構造}{41}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}ボソン化}{41}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}分配関数}{42}{subsection.2.4.4}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {トーラス分配関数}}\mathsurround \z@ $\hbox {}\relax }{42}{section*.27}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {円筒分配関数}}\mathsurround \z@ $\hbox {}\relax }{43}{section*.28}
+\contentsline {section}{\numberline {2.5}3次元反de Sitter時空(AdS$_3$)}{43}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}3次元重力理論とChern-Simons作用}{44}{subsection.2.5.1}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {Einstein方程式}}\mathsurround \z@ $\hbox {}\relax }{44}{section*.29}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {Einstein-Hilbert作用の書き換え}}\mathsurround \z@ $\hbox {}\relax }{45}{section*.30}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {Chern-Simons作用}}\mathsurround \z@ $\hbox {}\relax }{45}{section*.31}
+\contentsline {subsection}{\numberline {2.5.2}漸近的AdS$_3$時空}{46}{subsection.2.5.2}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {global AdS計量とPoincare計量}}\mathsurround \z@ $\hbox {}\relax }{46}{section*.32}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {漸近的AdS$_3$時空の定義}}\mathsurround \z@ $\hbox {}\relax }{49}{section*.33}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {漸近的Virasoro対称性}}\mathsurround \z@ $\hbox {}\relax }{49}{section*.34}
+\contentsline {subsection}{\numberline {2.5.3}様々な漸近的AdS$_3$計量}{51}{subsection.2.5.3}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {BTZ計量}}\mathsurround \z@ $\hbox {}\relax }{51}{section*.35}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {global AdS計量とPoincare計量}}\mathsurround \z@ $\hbox {}\relax }{53}{section*.36}
+\contentsline {subsection}{\numberline {2.5.4}有限温度の計量とHawking-Page相転移}{54}{subsection.2.5.4}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {有限温度の計量}}\mathsurround \z@ $\hbox {}\relax }{54}{section*.37}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {Bekenstein-Hawkingエントロピー}}\mathsurround \z@ $\hbox {}\relax }{55}{section*.38}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {Hawking-Page相転移}}\mathsurround \z@ $\hbox {}\relax }{56}{section*.39}
+\contentsline {subsection}{\numberline {2.5.5}AdS空間での曲線の長さ}{57}{subsection.2.5.5}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {global/Poincare座標の境界の2点間の測地線の長さ}}\mathsurround \z@ $\hbox {}\relax }{57}{section*.40}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {non-rotating BTZブラックホールのホライズンの周りを$\varphi $方向に一周する円の長さ}}\mathsurround \z@ $\hbox {}\relax }{58}{section*.41}
+\contentsline {section}{\numberline {2.6}AdS$_3$/CFT$_2$対応}{59}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}一般論}{59}{subsection.2.6.1}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {AdS$_3$/CFT$_2$対応の証拠}}\mathsurround \z@ $\hbox {}\relax }{59}{section*.42}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {AdS$_3$に双対なCFT$_2$とは}}\mathsurround \z@ $\hbox {}\relax }{60}{section*.43}
+\contentsline {subsection}{\numberline {2.6.2}状態と時空の対応}{60}{subsection.2.6.2}
+\contentsline {section}{\numberline {2.7}AdS/BCFTの処方}{61}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}AdS/BCFTの処方}{61}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}具体例}{62}{subsection.2.7.2}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {上半平面}}\mathsurround \z@ $\hbox {}\relax }{62}{section*.44}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {有限の長さの円筒}}\mathsurround \z@ $\hbox {}\relax }{63}{section*.45}
+\contentsline {chapter}{\numberline {第3章}2次元共形場理論におけるエンタングルメントエントロピー}{65}{chapter.3}
+\contentsline {section}{\numberline {3.1}エンタングルメント}{66}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}有限次元量子力学におけるエンタングルメント}{66}{subsection.3.1.1}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {状態}}\mathsurround \z@ $\hbox {}\relax }{66}{section*.46}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {エンタングル状態}}\mathsurround \z@ $\hbox {}\relax }{66}{section*.47}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {部分トレース}}\mathsurround \z@ $\hbox {}\relax }{68}{section*.48}
+\contentsline {subsection}{\numberline {3.1.2}場の量子論におけるエンタングルメントとは}{68}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Unruh効果}{69}{section.3.2}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {$2$次元共形平坦空間での零質量自由スカラー場の正準量子化}}\mathsurround \z@ $\hbox {}\relax }{70}{section*.49}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {Unruh効果}}\mathsurround \z@ $\hbox {}\relax }{71}{section*.50}
+\contentsline {section}{\numberline {3.3}エンタングルメントエントロピー}{74}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}エンタングルメントエントロピーの定義}{74}{subsection.3.3.1}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {von Neumannエントロピー}}\mathsurround \z@ $\hbox {}\relax }{74}{section*.51}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {von Neumannエントロピーの特徴づけ}}\mathsurround \z@ $\hbox {}\relax }{75}{section*.52}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {Renyiエントロピー}}\mathsurround \z@ $\hbox {}\relax }{77}{section*.53}
+\contentsline {subsection}{\numberline {3.3.2}相対エントロピーとBekenstein bound}{77}{subsection.3.3.2}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {CasiniによるBekenstein boundの導出}}\mathsurround \z@ $\hbox {}\relax }{77}{section*.54}
+\contentsline {subsection}{\numberline {3.3.3}レプリカ法}{78}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}2次元共形場理論におけるエンタングルメントエントロピー}{79}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}2次元零質量自由ディラック場でのエンタングルメントエントロピー}{79}{subsection.3.4.1}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {$A$が直線上の連結区間の場合}}\mathsurround \z@ $\hbox {}\relax }{79}{section*.55}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {$A$が円筒上の連結区間の場合}}\mathsurround \z@ $\hbox {}\relax }{80}{section*.56}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {$A$が直線上の非連結区間の場合}}\mathsurround \z@ $\hbox {}\relax }{81}{section*.57}
+\contentsline {subsection}{\numberline {3.4.2}一般の2次元共形場理論でのエンタングルメントエントロピー}{81}{subsection.3.4.2}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {$A$が直線上の連結区間の場合}}\mathsurround \z@ $\hbox {}\relax }{81}{section*.58}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {$A$が円筒上の連結区間の場合}}\mathsurround \z@ $\hbox {}\relax }{83}{section*.59}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {$A$が非連結区間の場合}}\mathsurround \z@ $\hbox {}\relax }{83}{section*.60}
+\contentsline {section}{\numberline {3.5}AdS$_3$/CFT$_2$対応についての笠-高柳公式}{84}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}笠-高柳公式}{84}{subsection.3.5.1}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {公式}}\mathsurround \z@ $\hbox {}\relax }{84}{section*.61}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {具体例1 : 平面上のCFTの真空での、連結区間Aのエンタングルメントエントロピー}}\mathsurround \z@ $\hbox {}\relax }{84}{section*.62}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {具体例2 : 円筒上のCFTの真空での、連結区間Aのエンタングルメントエントロピー}}\mathsurround \z@ $\hbox {}\relax }{85}{section*.63}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {具体例3 : 平面上のCFTの有限温度状態での、小さな連結区間Aのエンタングルメントエントロピー}}\mathsurround \z@ $\hbox {}\relax }{85}{section*.64}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {具体例4 : 平面上のCFTの真空での、非連結区間Aのエンタングルメントエントロピー}}\mathsurround \z@ $\hbox {}\relax }{85}{section*.65}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {具体例5 : 円筒上のCFTの低温状態での、連結区間Aのエンタングルメントエントロピー}}\mathsurround \z@ $\hbox {}\relax }{87}{section*.66}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {具体例6 : 円筒上のCFTの高温状態での、小さな連結区間Aのエンタングルメントエントロピー}}\mathsurround \z@ $\hbox {}\relax }{87}{section*.67}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {具体例7: 円筒上のCFTの高温状態での、全体系のエントロピー}}\mathsurround \z@ $\hbox {}\relax }{87}{section*.68}
+\contentsline {subsection}{\numberline {3.5.2}HRT公式}{88}{subsection.3.5.2}
+\contentsline {chapter}{\numberline {第4章}2次元共形場理論での分離クエンチ}{89}{chapter.4}
+\contentsline {section}{\numberline {4.1}問題設定}{89}{section.4.1}
+\contentsline {section}{\numberline {4.2}自由ディラック場}{91}{section.4.2}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {解析計算}}\mathsurround \z@ $\hbox {}\relax }{91}{section*.69}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {数値計算}}\mathsurround \z@ $\hbox {}\relax }{93}{section*.70}
+\contentsline {section}{\numberline {4.3}重力双対を持つ共形場理論}{93}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}AdS/BCFTの処方を用いたEEの解析}{93}{subsection.4.3.1}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {解析計算}}\mathsurround \z@ $\hbox {}\relax }{93}{section*.71}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {connected geodesic}}\mathsurround \z@ $\hbox {}\relax }{95}{section*.72}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {disconnected geodesic}}\mathsurround \z@ $\hbox {}\relax }{96}{section*.73}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {数値計算}}\mathsurround \z@ $\hbox {}\relax }{96}{section*.74}
+\contentsline {subsection}{\numberline {4.3.2}AdS側での解釈}{97}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {第5章}2次元共形場理論での2重分離クエンチ}{99}{chapter.5}
+\contentsline {section}{\numberline {5.1}問題設定}{99}{section.5.1}
+\contentsline {section}{\numberline {5.2}自由Dirac場}{101}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}EEの時間発展}{101}{subsection.5.2.1}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {解析計算}}\mathsurround \z@ $\hbox {}\relax }{101}{section*.75}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {数値計算}}\mathsurround \z@ $\hbox {}\relax }{102}{section*.76}
+\contentsline {subsection}{\numberline {5.2.2}中央の領域の熱力学的エントロピー}{103}{subsection.5.2.2}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {中央の領域の熱力学的エントロピー}}\mathsurround \z@ $\hbox {}\relax }{103}{section*.77}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {領域$L,R$に端点をもち、$C$にまたがるような大きな部分系$A$のEE}}\mathsurround \z@ $\hbox {}\relax }{104}{section*.78}
+\contentsline {section}{\numberline {5.3}重力双対をもつ共形場理論}{106}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}thermal non-rotating BTZ ($\beta <1$)の場合}{106}{subsection.5.3.1}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {解析計算}}\mathsurround \z@ $\hbox {}\relax }{106}{section*.79}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {数値計算}}\mathsurround \z@ $\hbox {}\relax }{108}{section*.80}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {BTZ相での、中央の領域$C$を囲む領域のEE}}\mathsurround \z@ $\hbox {}\relax }{109}{section*.81}
+\contentsline {subsection}{\numberline {5.3.2}thermal AdS ($\beta >1$)の場合}{109}{subsection.5.3.2}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {解析計算}}\mathsurround \z@ $\hbox {}\relax }{109}{section*.82}
+\contentsline {subsubsection}{\relax \unhbox \voidb@x \hbox {}$\@@underline {\hbox {数値計算}}\mathsurround \z@ $\hbox {}\relax }{109}{section*.83}
+\contentsline {section}{\numberline {5.4}2つの1重分離クエンチと2重分離クエンチの比較と重力相互作用}{110}{section.5.4}
+\contentsline {chapter}{\numberline {第6章}まとめと今後の展望}{112}{chapter.6}
+\contentsline {chapter}{\numberline {付録A}テータ関数の公式}{115}{appendix.A}
+\contentsline {chapter}{\numberline {付録B}局所分離クエンチで用いた数値計算}{118}{appendix.B}
+\contentsline {chapter}{参考文献}{122}{appendix*.87}

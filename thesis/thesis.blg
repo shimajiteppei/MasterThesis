@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2018/W32TeX)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: thesis.aux
+The style file: unsrt.bst
+Database file #1: bib.bib
+Warning--I'm ignoring FeffermanGraham's extra "author" field
+--line 615 of file bib.bib
+Warning--empty chapter and pages in Metcalf2007
+Warning--empty journal in Radicevic:2014kqa
+You've used 108 entries,
+            1791 wiz_defined-function locations,
+            1136 strings with 19268 characters,
+and the built_in function-call counts, 22543 in all, are:
+= -- 2000
+> -- 877
+< -- 11
++ -- 343
+- -- 235
+* -- 1526
+:= -- 3667
+add.period$ -- 338
+call.type$ -- 108
+change.case$ -- 87
+chr.to.int$ -- 0
+cite$ -- 110
+duplicate$ -- 1005
+empty$ -- 2342
+format.name$ -- 235
+if$ -- 5021
+int.to.chr$ -- 0
+int.to.str$ -- 108
+missing$ -- 129
+newline$ -- 546
+num.names$ -- 108
+pop$ -- 245
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 341
+stack$ -- 0
+substring$ -- 1526
+swap$ -- 127
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 200
+width$ -- 111
+write$ -- 1183
+(There were 3 warnings)

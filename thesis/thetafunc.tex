@@ -1,0 +1,109 @@
+\chapter{テータ関数の公式}
+テータ関数、指標付きテータ関数の定義
+\begin{align}
+\theta(\nu,\tau)&=\sum_{n=-\infty}^{\infty} \exp(\pi i n^2 \tau + 2\pi i n \nu)\\
+\theta\left[\begin{array}{c}
+a\\
+b\end{array}\right](\nu,\tau)&=\exp(\pi i a^2 \tau + 2\pi i a (\nu+b))\theta(\nu+a\tau+b,\tau)\notag\\
+&=\sum_{n=-\infty}^{\infty}\exp\left(\pi i (n+a)^2\tau + 2\pi i (n+a)(\nu+b) \right)
+\end{align}
+
+Jacobiのテータ関数の定義
+\begin{align}
+\theta_1(\nu|\tau)&=-\theta\left[\begin{array}{c}
+1/2\\
+1/2\end{array}\right](\nu,\tau)=-i\sum_{n=-\infty}^\infty (-1)^n e^{\pi i \tau (n-1/2)^2}e^{2\pi i \nu(n-1/2)} \\
+\theta_2(\nu|\tau)&=\theta\left[\begin{array}{c}
+1/2\\
+0\end{array}\right](\nu,\tau)=\sum_{n=-\infty}^{\infty} e^{\pi i \tau(n-1/2)^2}e^{2\pi i \nu (n-1/2)}\\
+\theta_3(\nu|\tau)&=\theta\left[\begin{array}{c}
+0\\
+0\end{array}\right](\nu,\tau)=\sum_{n=-\infty}^{\infty} e^{\pi i \tau n^2}e^{2\pi i \nu n}\\
+\theta_4(\nu|\tau)&=\theta\left[\begin{array}{c}
+0\\
+1/2\end{array}\right](\nu,\tau)=\sum_{n=-\infty}^{\infty} (-1)^n e^{\pi i \tau n^2}e^{2\pi i \nu n}
+\end{align}
+
+Dedekindのエータ関数の定義
+\begin{align}
+\eta(\tau)=e^{\pi i \tau/12}\prod_{m=1}^\infty (1-e^{2\pi i m\tau})=\left(\frac{\del_\nu \theta_1(\nu|\tau)|_{\nu=0}}{2\pi}\right)^{1/3}
+\end{align}
+
+無限積表示
+\begin{align}
+\theta_1(\nu|\tau)&=2e^{\pi i \tau/4}\sin\pi\nu \prod_{m=1}^{\infty}(1-e^{2\pi i m\tau})(1-e^{2\pi i\nu}e^{2\pi i m\tau})(1-e^{-2\pi i\nu}e^{2\pi i m\tau})\\
+\theta_2(\nu|\tau)&=2e^{\pi i \tau/4}\cos\pi\nu \prod_{m=1}^{\infty}(1-e^{2\pi i m\tau})(1+e^{2\pi i\nu}e^{2\pi i m\tau})(1+e^{-2\pi i\nu}e^{2\pi i m\tau})\\
+\theta_3(\nu|\tau)&=\prod_{m=1}^{\infty}(1-e^{2\pi i m\tau})(1+e^{2\pi i\nu}e^{2\pi i (m-1/2)\tau})(1+e^{-2\pi i\nu}e^{2\pi i (m-1/2)\tau})\\
+\theta_4(\nu|\tau)&=\prod_{m=1}^{\infty}(1-e^{2\pi i m\tau})(1-e^{2\pi i\nu}e^{2\pi i (m-1/2)\tau})(1-e^{-2\pi i\nu}e^{2\pi i (m-1/2)\tau})
+\end{align}
+反転
+\begin{align}
+\theta_1(-\nu|\tau)&=-\theta_1(\nu|\tau)\\
+\theta_2(-\nu|\tau)&=\theta_2(\nu|\tau)\\
+\theta_3(-\nu|\tau)&=\theta_3(\nu|\tau)\\
+\theta_4(-\nu|\tau)&=\theta_4(\nu|\tau)
+\end{align}
+モジュラー変換性
+\begin{align}
+\theta_1(\nu|\tau+1)&=e^{\pi i \tau}\theta_1(\nu|\tau)\\
+\theta_2(\nu|\tau+1)&=e^{\pi i \tau}\theta_2(\nu|\tau)\\
+\theta_3(\nu|\tau+1)&=\theta_4(\nu|\tau)\\
+\theta_4(\nu|\tau+1)&=\theta_3(\nu|\tau)\\
+\theta_1(\nu/\tau,-1/\tau)&=-i(-i\tau)^{1/2}e^{\pi i \nu^2/\tau}\theta_1(\nu|\tau)\\
+\theta_2(\nu/\tau,-1/\tau)&=(-i\tau)^{1/2}e^{\pi i \nu^2/\tau}\theta_4(\nu|\tau)\\
+\theta_3(\nu/\tau,-1/\tau)&=(-i\tau)^{1/2}e^{\pi i \nu^2/\tau}\theta_3(\nu|\tau)\\
+\theta_4(\nu/\tau,-1/\tau)&=(-i\tau)^{1/2}e^{\pi i \nu^2/\tau}\theta_2(\nu|\tau)\\
+\eta(\tau+1)&=e^{\pi i/12}\eta(\tau)\\
+\eta(-1/\tau)&=(-i\tau)^{1/2}\eta(\tau)
+\end{align}
+擬二重周期性
+\begin{align}
+\theta_1(\nu+1|\tau)&=-\theta_1(\nu|\tau)\\
+\theta_2(\nu+1|\tau)&=-\theta_2(\nu|\tau)\\
+\theta_3(\nu+1|\tau)&=\theta_3(\nu|\tau)\\
+\theta_4(\nu+1|\tau)&=\theta_4(\nu|\tau)\\
+\theta_1(\nu+\tau|\tau)&=-e^{-\pi i \tau}e^{-2\pi i \nu}\theta_1(\nu|\tau)\label{quasidoubleperiod}\\
+\theta_2(\nu+\tau|\tau)&=e^{-\pi i \tau}e^{-2\pi i \nu}\theta_2(\nu|\tau)\\
+\theta_3(\nu+\tau|\tau)&=e^{-\pi i \tau}e^{-2\pi i \nu}\theta_3(\nu|\tau)\\
+\theta_4(\nu+\tau|\tau)&=-e^{-\pi i \tau}e^{-2\pi i \nu}\theta_4(\nu|\tau)
+\end{align}
+半周期ずらす
+\begin{align}
+\theta_1(v\pm 1/2|\tau)&=\pm \theta_2(\nu|\tau)\\
+\theta_2(v\pm 1/2|\tau)&=\mp \theta_1(\nu|\tau)\\
+\theta_3(v\pm 1/2|\tau)&= \theta_4(\nu|\tau)\\
+\theta_4(v\pm 1/2|\tau)&= \theta_3(\nu|\tau)\\
+\theta_1(\nu\pm\tau/2|\tau)&=\pm ie^{-\pi i \tau/4}e^{\mp \pi i \nu}\theta_4(\nu|\tau)\\
+\theta_2(\nu\pm\tau/2|\tau)&=e^{-\pi i \tau/4}e^{\mp \pi i \nu}\theta_3(\nu|\tau)\\
+\theta_3(\nu\pm\tau/2|\tau)&=e^{-\pi i \tau/4}e^{\mp \pi i \nu}\theta_2(\nu|\tau)\\
+\theta_4(\nu\pm\tau/2|\tau)&=\pm ie^{-\pi i \tau/4}e^{\mp \pi i \nu}\theta_1(\nu|\tau)
+\end{align}
+複素共役
+\begin{align}
+\overline{\theta_1(\nu|\tau)}&=-\theta_1(-\bar{\nu}|-\bar{\tau})=\theta_1(\bar{\nu}|-\bar{\tau})\\
+\overline{\theta_2(\nu|\tau)}&=\theta_2(-\bar{\nu}|-\bar{\tau})=\theta_2(\bar{\nu}|-\bar{\tau})\\
+\overline{\theta_3(\nu|\tau)}&=\theta_3(-\bar{\nu}|-\bar{\tau})=\theta_3(\bar{\nu}|-\bar{\tau})\\
+\overline{\theta_4(\nu|\tau)}&=\theta_4(-\bar{\nu}|-\bar{\tau})=\theta_4(\bar{\nu}|-\bar{\tau})\\
+\overline{\eta(\tau)}&=\eta(-\bar{\tau})
+\end{align}
+低温極限$\IM\tau\to\infty$
+\begin{align}
+\theta_1(\nu|\tau)&= 2e^{\pi i \tau/4}\sin \pi\nu \times(1+O(e^{2\pi i \tau}))\\
+\theta_2(\nu|\tau)&= 2e^{\pi i \tau/4}\cos \pi\nu \times(1+O(e^{2\pi i \tau}))\\
+\theta_3(\nu|\tau)&= 1+2e^{\pi i \tau}\cos 2\pi\nu +O(e^{2\pi i \tau})\\
+\theta_4(\nu|\tau)&= 1-2e^{\pi i \tau}\cos 2\pi\nu +O(e^{2\pi i \tau})\\
+\eta(\tau)&=e^{\pi i \tau/12}(1+O(e^{2\pi i \tau}))
+\end{align}
+高温極限$\tau=i\beta, \beta\to 0$
+\begin{align}
+\theta_1(\nu|i\beta)&= 2\beta^{-1/2}\exp\left( -\frac{\pi}{\beta}\left(\nu^2+\frac{1}{4}\right) \right)\sinh \frac{\pi \nu}{\beta} \times (1+O(e^{-2\pi/\beta}))\\
+\theta_2(\nu|i\beta)&= 2\beta^{-1/2}\exp\left( -\frac{\pi}{\beta}\left(\nu^2+\frac{1}{4}\right) \right)\cosh \frac{\pi \nu}{\beta} \times (1+O(e^{-2\pi/\beta}))\\
+\theta_3(\nu|i\beta)&= \beta^{-1/2}e^{-\pi \nu^2/\beta}\left(1+2e^{-\pi/\beta}\cos(2\pi i\nu/\beta)+O(e^{-2\pi/\beta})\right)\\
+\theta_4(\nu|i\beta)&= \beta^{-1/2}e^{-\pi \nu^2/\beta}\left(1-2e^{-\pi/\beta}\cos(2\pi i\nu/\beta)+O(e^{-2\pi/\beta})\right)\\
+\eta(i\beta)&=\beta^{-1/2}e^{-\pi/(12\beta)}\times (1+O(e^{-2\pi/\beta}))
+\end{align}
+Landenの公式
+\begin{align}
+\theta_1(\nu|\tau)\theta_2(\nu|\tau)&=\theta_4(0,|2\tau)\theta_1(2\nu|2\tau)\\
+\theta_3(\nu|\tau)\theta_4(\nu|\tau)&=\theta_4(0,|2\tau)\theta_4(2\nu|2\tau)
+\end{align}

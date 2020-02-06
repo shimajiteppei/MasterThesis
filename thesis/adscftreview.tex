@@ -1,0 +1,1803 @@
+\chapter{AdS$_3$/CFT$_2$対応}\label{chap:adscftreview}
+この章では\textbf{AdS$_3$/CFT$_2$対応}に焦点をあてて、本研究の内容を説明するために必要な事項を解説する。AdS$_{d+1}$とは$d+1$次元反 de Sitter(anti de Sitter)時空の略語で、CFT$_d$とは$d$次元共形場理論(conformal field theory)の略語であり、以降しばしばこの略語を用いる。
+\newline
+
+1995年にMaldacenaによって最初に発見された\textbf{AdS$_5$/CFT$_4$対応} \cite{Maldacena:1997re}は、「AdS$_5\times S^5$背景時空上のType IIB超弦理論」と「AdS$_5$の``境界"の$4$次元時空に存在する$\mathcal{N}=4$ 超対称SU($N$) Yang-Mills理論」の相関関数の等価性を主張する。この等価性は、Type IIB超弦理論において$N$枚のD3ブレーンを並行にならべた状況の低エネルギー極限をとることで発見された。AdS$_5$/CFT$_4$対応のほかにも、様々な理論やブレーンの配置の低エネルギー極限をとることで、「AdS$_{d+1}$背景時空上の重力理論」と「AdS$_{d+1}$の$d$次元の境界に住むゲージ理論」の相関関数が等価になる様々な具体例が構成されている\cite{Aharony:1999ti}。このとき、AdS重力に対応する場の理論には超対称性や共形対称性は必ずしも必要ではないため、このような等価性を\textbf{ゲージ重力対応(gauge gravity correspondence)}や\textbf{ホログラフィー原理(holographic principle)}などと呼ぶことも多い。
+
+AdS$_{d+1}$/CFT$_d$対応とは「$d+1$次元AdS背景時空上の重力理論」と「$d$次元AdS空間の境界上の強結合な共形場理論(CFT)」の相関関数の等価性のことを指す予想である。この対応は現時点で数学的に証明されてはいないが、膨大な数の研究によってその等価性が検証されており、多くの研究者はこの予想が正しいと信じている。AdS$_5$/CFT$_4$対応を提唱したMaldacenaの論文\cite{Maldacena:1997re}は、素粒子物理学を中心とする論文のデータベース INSPIRE(http://inspirehep.net)において現時点で最も多い引用件数がある。また、この論文はプレプリントサーバー arXiv(https://arxiv.org)の物理のすべての分野で引用されており、現代の物理学の大きな潮流のひとつとなっている。
+
+AdS/CFT対応を応用する手法は大きく2つに分類できる。一つは「強結合な場の理論」の相関関数を「重力理論」における測地線などの幾何学的な量に置き換える方法である。これにより一般に摂動論的な扱いが難しい強結合な理論の相関関数を、重力理論での比較的簡単な計算に置き換えることができる。そのため、AdS/CFT対応はQCD\cite{Sakai:2004cn}\cite{Kovtun:2004de}や強相関な物性系\cite{Hartnoll_2009}といった非摂動的な効果が重要になる物理系での物理量の計算にも応用されてきた。もう一つの応用法は、「(半古典)重力理論」における物理量を「強結合な場の理論」の相関関数に置き換える方法である。例えば、Bekenstein-Hawkingエントロピーは重力を半古典近似して取り扱うことで導出されたが、AdS/CFT対応によってこれを場の理論から導出することができる\cite{Strominger:1996sh}\cite{Strominger:1997eq}。
+\newline
+
+$\ref{sec:confsym},\ref{sec:2dcft},\ref{sec:2dscalar},\ref{sec:2ddirac}$節では、2次元共形場理論やその具体例である自由スカラー場や自由Dirac場を\cite{EguchiSugawara}\cite{NakaharaTop1}\cite{NakaharaTop2}\cite{NakayamaCFT}\cite{polchinski1998string1}\cite{polchinski1998string2}\cite{francesco2012conformal}を参考にして解説する。$\ref{sec:ads3}$節ではAdS/CFT対応で重要になる漸近的AdS$_3$時空を\cite{FukumaSakatani}\cite{Banados:1998gg}\cite{Donnay:2016iyk}を参考に解説する。$\ref{sec:adscft}$節ではAdS$_3$/CFT$_2$対応を\cite{TakayanagiJapan}\cite{Natsuume}\cite{Klebanov:2000me}\cite{Banerjee}を参考に解説する。最後に$\ref{sec:adsbcft}$節では、本研究で中心的な役割を果たした「境界付き漸近的AdS時空」と「境界付き空間上の共形場理論」の対応を取り扱う\textbf{AdS/BCFT}の処方を\cite{Takayanagi:2011zk}\cite{Fujita:2011fp}を参考に解説する。
+
+\section{共形対称性}\label{sec:confsym}
+ここでは\ref{sec:2dcft}節以降で2次元共形場理論を扱う準備として、共形対称性の定義を説明する。共形場理論を定義するときには「共形対称性」と「Weyl対称性」という混同しやすい概念が登場する。これらはどちらも重要な概念であるため、できるだけ誤解を排除するために若干形式的に導入する。
+
+\subsection{古典的共形対称性}\label{subsecclassicalconfsym}
+\subsub{共形変換・Weyl変換の定義}
+多様体$M$からそれ自身への微分同相全体は写像の合成を積として群をなす。これを微分同相群(diffeomorphism group)といい$\text{Diff}(M)$で表す。
+
+2つの擬Riemann多様体$(M_1,g_1),(M_2,g_2)$の間の微分同相$F\colon M_1\to M_2$が、$F^\ast g_2=e^\Omega g_1\ (\exists\Omega\in\text{C}^\infty(M_1,\R))$を満たすとき、$F$を\textbf{大域共形変換(global conformal transformation)}\footnote{数学では共形変換と呼ばれる。ここで定義した意味でも「大域共形変換」は「共形変換」になっているので、「任意の共形変換」と言った場合には大域共形変換も含まれることになる。}という。大域共形変換$F\colon M_1\to M_2$が存在するとき、$(M_1,g_1)$と$(M_2,g_2)$は\textbf{共形同値(conformally equivalent)}であるといい、平坦な多様体に共形同値な擬Riemann多様体は\textbf{共形平坦(conformally flat)}であるという。また、2つの擬Riemann多様体$(M_1,g_1),(M_2,g_2)$の部分空間$U_1\of M_1,U_2\of M_2$の間の大域共形変換$F\colon U_1\to U_2$を局所共形変換、あるいは誤解のない限りたんに\textbf{共形変換(conformal transformation)}という。
+
+擬Riemann多様体$(M,g)$からそれ自身への大域共形変換全体は写像の合成を積として群をなす。これを大域共形変換群\footnote{普通は共形変換群という。ここではあえて大域をつけている。}といい$\text{Conf}(M,g)$と書く。明らかに$\text{Conf}(M,g)$は$\text{Diff}(M)$の部分群になっている。また大域共形変換群$\text{Conf}(M,g)$はその定義から、等長変換群$\text{Isom}(M,g)$を部分群に含む。
+
+\begin{ex}
+任意の2次元Riemann多様体は局所的に共形平坦\footnotemark であり、向き付け可能であれば複素構造が自動的に入ってRiemann面(Riemann surface)になる。共形変換の定義より、Riemann面上の局所共形変換とは局所的な双正則変換(biholomorphic transformation)のことであり、大域共形変換群とは正則自己同型群(automorphism group)のことである。
+\end{ex}
+\footnotetext{{2次元Riemann多様体に局所的な共形平坦座標である等温座標(isothermal coordinate)がとれることから従う。}}
+
+多様体$M$に許容される$(p,q)$型の符号を持った計量$g$の全体を$\text{Met}(M,(p,q))$、あるいはたんに$\text{Met}(M)$と書くことにする。例えば、$M$上のRiemann計量全体は$\text{Met}(M,(d,0))$と書けて、$M$上のLorentz計量全体は$\text{Met}(M,(d-1,1))$と書ける。
+
+いま、計量$g$と$e^\Omega g\ (\Omega\in\text{C}^\infty(M,\R))$の符号は変わらないので、$M$上でつねに正の値をとる関数$e^\Omega$を掛けてスケール変換する写像$g\mapsto e^\Omega g$は$\text{Met}(M,(p,q))$からそれ自身への写像となる。このスケール変換$e^\Omega\colon \text{Met}(M,(p,q))\to \text{Met}(M,(p,q))$を\textbf{Weyl変換(Weyl transformation)}\footnote{この変換を共形変換と呼ぶ流儀もあるので、注意しておく。}という。Weyl変換も写像の合成を積として群をなし、これを$\text{Weyl}(M,(p,q))$、あるいはたんに$\text{Weyl}(M)$と書く。共形変換(群)は計量を固定しなければ定義できなかったが、微分同相変換やWeyl変換は計量を固定せずに定義できることに注意する。
+
+2つの計量$g,g'$がWeyl変換で移りあうなら$\text{Conf}(M,g)=\text{Conf}(M,g')$となるから、大域共形変換群はWeyl変換の同値類にしか依らない。そこで$\text{Conf}(M,g)$のことを、$\text{Conf}(M,[g])$と書くことも多い。ただし$[g]\in\text{Met}(M)/\text{Weyl}(M)$は$g$のWeyl同値類である。
+
+\subsub{共形Killing方程式}
+局所共形変換を生成する、$U\of M$上で局所的に定義されたベクトル場$v$を求めるためには、\textbf{共形Killing方程式}$\mathcal{L}_v g=fg\ (\exists f\in\text{C}^\infty(U,\R)))$を解けばいい。
+
+共形Killing方程式を成分表示すると、$\nabla_\mu v_\nu(x)+\nabla_\nu v_\nu(x)=f(x)g_{\mu\nu}$であり、両辺のトレースをとれば、
+\begin{align}\label{confkilling}
+\nabla_\mu v_\nu+\nabla_\nu v_\mu=\frac{2}{d}g_{\mu\nu} \nabla_\rho v^\rho 
+\end{align}
+と$v$のみで書ける。
+
+\begin{ex}
+とくに平坦空間の場合、$\ g_{\mu\nu}=\eta_{\mu\nu},\nabla_\mu=\del_\mu$であり、共形Killing方程式から
+\begin{align}
+2\del^2 v_\nu=(2-d)\del_\nu f,\quad (2-d)\del_\nu\del_\rho f=\eta_{\nu\rho} \del^2 f,\quad (d-1)\del^2 f=0
+\end{align}
+という式を得る。したがって$d\geq 3$の平坦空間$\R^{(p,q)}$\footnotemark なら$\del_\mu\del_\nu f=0$となり、$f(x)=A+B_\mu x^\mu,\ (A,B_\mu\text{は定数})$の形のみ許され、$v$は$x^\mu$の2次式の形に制限される。これに注意して共形Killing方程式を解けば、$v$は次の4種類のベクトル場の線形結合として表されることが分かる。
+\begin{align}
+&\text{並進}&&P_\mu\coloneqq \del_\mu&&\\
+&\text{回転(Lorentz変換)}&&M_{\mu\nu}\coloneqq x_\nu\del_\mu-x_\mu\del_\nu&&\\
+&\text{スケール変換}&&D\coloneqq x^\mu\del_\mu&&\\
+&\text{特殊共形変換}&&K_\mu\coloneqq 2x_\mu x^\nu\del_\nu-x^2\del_\mu&&
+\end{align}
+
+これらの生成子は次の交換関係を満たし、$\so(p+1,q+1)$の生成子となっている。また、$\text{Isom}(M,g)\of \text{Conf}(M,g)$よりポアンカレ群の生成子$P_\mu, M_{\mu\nu}$が含まれていることに注意する。
+\begin{align}
+[D,P_\mu]&=P_\mu\\
+[K_\rho,D]&=K_\rho\\
+[K_\rho,P_\mu]&=2(\eta_{\rho\mu}D-M_{\rho\mu})\\
+[K_\rho,M_{\mu\nu}]&=\eta_{\rho\mu}K_\nu-\eta_{\rho\nu}K_\mu\\
+[P_\rho,M_{\mu\nu}]&=\eta_{\rho\mu}P_\nu-\eta_{\rho\nu}P_\mu\\
+[M_{\mu\nu},M_{\rho\sigma}]&=\eta_{\mu\sigma}M_{\nu\rho}+\eta_{\nu\rho}M_{\mu\sigma}-\eta_{\mu\rho}M_{\nu\sigma}-\eta_{\nu\sigma}M_{\mu\rho}
+\end{align}
+$P_{\mu},M_{\mu\nu},D,K_{\mu}$に対応する有限変換は
+\begin{align}
+&\text{並進}&&x^\mu \mapsto x^\mu+a^\mu&&\\
+&\text{回転(Lorentz変換)}&&x^\mu\mapsto M^\mu_\nu x^\nu\  (M\in SO_+(p,q))&&\\
+&\text{スケール変換}&&x^\mu \mapsto e^\alpha x^\mu&&\\
+&\text{特殊共形変換}&& x^\mu\mapsto \frac{x^\mu-c^\mu x^2}{1-2c_\nu x^\nu+c^2x^2} &&
+\end{align}
+で与えられる。共形対称性は特殊共形変換に対する不変性も含む言葉なので、スケール不変性を持つ理論は共形場理論になるとは限らないことに注意しておく。
+\end{ex}
+\footnotetext{$\R^{(p,q)}$とは、平坦計量$\eta=\text{diag}(\overbrace{+1,\cdots,+1}^{p},\overbrace{-1,\cdots,-1}^{q})$を持った$p+q$次元平面のこと。}
+
+\begin{ex}
+Riemann面に共形平坦な局所座標$(x,\tau)$をとり、$g_{\mu\nu}(x,\tau)=e^{2\Omega(x,\tau)}\delta_{\mu\nu}$とする。このとき共形Killing方程式(\ref{confkilling})は$\Omega$に依らず、Cauchy-Riemann方程式
+\begin{align}
+\del_x v^x=\del_\tau v^\tau,\ \del_x v^\tau= -\del_\tau v^x
+\end{align}
+になる。共形平坦座標$(x,\tau)$に対して複素座標と複素微分
+\begin{align}
+&z\coloneqq x+i\tau, &&\overline{z}\coloneqq x-i\tau&&\\
+&\del\coloneqq \del_z=\frac{1}{2}(\del_x-i\del_\tau), &&\overline{\del}\coloneqq \del_{\overline{z}}=\frac{1}{2}(\del_x+i\del_\tau)&&
+\end{align}
+を導入すると、共形Killing方程式(\ref{confkilling})は
+\begin{align}
+\del_z v^{\overline{z}}=0,\  \del_{\overline{z}} v^z=0
+\end{align}
+に等しい。したがってRiemann面上の局所共形変換を生成するベクトル場は、局所的に定義された正則・反正則ベクトル場に他ならない。
+
+境界のない種数$g$のコンパクトRiemann面$\Sigma_g$上の大域的な共形Killingベクトル場(=正則ベクトル場)の自由度と、共形Killing群(=正則自己同型群の単位元に連結な成分)は
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}\hline
+		g & $\dim_\R$\{正則ベクトル場全体\} &　共形Killing群 \\ \hline
+		$0$ & 6 & $PSL(2,\C)$ \\\hline
+		$1$ & 2 & $U(1)\times U(1)$\\\hline
+		$2$以上 & 0 & $\{1\}$\\ \hline
+	\end{tabular}
+\end{table}
+となる。とくに$\Sigma_0=S^2$の正則自己同型群は
+\begin{align}
+Aut(S^2)=PSL(2,\C)=SO_+(3,1)=\left\{ \frac{az+b}{cz+d} \mid a,b,c,d\in \C,\ ad-bc\neq 0 \right\}
+\end{align}
+であり、$d\geq 3$の平坦空間$\R^{(p,q)}$の場合の結果に一致する。また、このLie群の6つの生成子として並進$P_\mu$、回転$M$、スケール変換$D$、特殊共形変換$K_\mu$ ($\mu=1,2$)がとれる。
+
+$\Sigma_1=T^2$の共形Killing群$U(1)\times U(1)$は小円・大円の接線方向への並進変換(図\ref{fig:torusckv})に対応している。また、$\Sigma_{g\geq 2}$の正則自己同型群は有限群になる。
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{torusCKV.pdf}
+	\caption{トーラスの小円(赤線)と大円(青線)の接線方向が共形Killingベクトルになる。}
+	\label{fig:torusckv}
+\end{figure}
+
+
+一般に$2$つのRiemann面が微分同相であっても共形同値になるとは限らない。そこで$1$つRiemann面$M$を与えたときに、$M$に微分同相な多様体全体の集合を共形同値なもので分類することを考えてみる。つまり
+\begin{align}
+\{ N\mid N\text{は}M\text{に微分同相} \}/\text{共形同値}
+\end{align}
+という分類を考えてみる。
+
+単連結Riemann面についての分類は、K\"{o}beの一意化定理(uniformization theorem)として知られていて、任意の単連結Riemann面は平面$\C$、円板$D^2$、球面$S^2$のいずれかに共形同値であることが知られている。
+
+境界のない、計量$\gamma$をもった種数$g$のコンパクトRiemann面$(\Sigma_g,\gamma)$についての分類集合
+\begin{align}
+\text{Mod}_g=\{ N\mid N\text{は}\Sigma_g\text{に微分同相} \}/\text{共形同値}
+\end{align}
+は$(\Sigma_g,\gamma)$のモジュライ空間(moduli space)と呼ばれ、
+\begin{align}
+\dim_\C \text{Mod}_g=\left\{ \begin{array}{cc}   
+0 &(g=0)\\
+1 &(g=1)\\
+3g-3 &(g=2)
+\end{array}\right.
+\end{align}
+であることが知られている。
+
+たとえば$g=1$のときを考えてみる。$z\sim z+2\pi \sim z+2\pi\tau\ (\IM\tau>0)$と同一視の入った平坦トーラス $T_\tau^2\  (ds^2=dzd\overline{z})$を考え(図\ref{fig:flattorus})、モジュライパラメータを
+\begin{align}
+\tau' = \frac{a\tau+b}{c\tau+d}\quad (a,b,c,d\in \Z,\  ad-bc=1)
+\end{align}
+と$PSL(2,\Z)$変換することを考える。$PSL(2,\Z)$群は$2$つの元
+\begin{align}
+\tau'&= -\frac{1}{\tau}\\
+\tau'&= \tau+1
+\end{align}
+で生成され、これらの変換は\textbf{モジュラー変換(modular transformation)}と呼ばれる。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{flattorus.pdf}
+	\caption{平坦トーラスを表す平行四辺形。2つの対辺をそれぞれ同一視することで平坦なトーラスを4次元空間に実現することができる。}
+	\label{fig:flattorus}
+\end{figure}
+
+上のモジュラー変換に対して平坦トーラス$T_{\tau'}^2$は$T_{\tau}^2$とスケール変換で移りあうから、これらは共形同値である。したがって$\tau\ (\IM\tau>0)$を同一視のパラメータにもつ平坦トーラス$T_{\tau}^2$は、パラメータを$PSL(2,\Z)$変換しても共形同値であることが分かる。
+
+トーラスのモジュライ空間$\text{Mod}_1$は$\UHP/PSL(2,\Z)$になり、たしかに$\dim_\C \text{Mod}_1=1$となっている。同一視のパラメータ$\tau$はモジュライ空間の座標を与えるので、\textbf{モジュライパラメータ(moduli parameter)}と呼ばれる。
+\end{ex}
+
+\subsub{作用の古典的共形対称性}
+$d$次元(擬)Riemann多様体$(M,g)$を時空にもつ場$X$の理論を考える。計量$g$を力学変数として扱う場合、その古典作用を$S[X,g]$で表す。計量$g$を力学変数として扱わず、背景時空として外場と見なす場合、その古典作用を$S[X]_{(M,g)}$で表す\footnote{定義から当然、$S[X,g]=S[X]_{(M,g)}$なのだが、$g$が力学変数になっているか否かで敢えてノーテーションを分けた。例えば4次元Minkowski空間上のスカラー場のラグランジアン$\frac{1}{2}\eta^{\mu\nu}\del_\mu \phi \del_\nu \phi+\frac{1}{2}m\phi^2$を考えるときには、計量は$\eta$で固定されていて、これは右辺のノーテーションになっている。しかし一般相対論ではEinstein-Hilbert作用とともに、$g$に結合したスカラー場のラグランジアン$\frac{1}{2}g^{\mu\nu}\del_\mu \phi \del_\nu \phi+\frac{1}{2}m\phi^2$が使われ、これは左辺のノーテーションになっている。}。
+\begin{oframed}
+作用$S[X,g]$の(古典的)\textbf{微分同相不変性}と(古典的)\textbf{Weyl不変性}をそれぞれ次で定義する。
+\begin{align}
+&S[X,g]\text{が微分同相不変}&&\iff \forall F\in\text{Diff}(M),&& S[F^\ast X,F^\ast g]=S[X,g]&&\\
+&S[X,g]\text{がWeyl不変}&&\iff \forall e^\Omega \in\text{Weyl(M)},&& S[X,e^\Omega g]=S[X,g]&&
+\end{align}
+また、時空を固定した上で、作用$S[X]_{(M,g)}$の(古典的)\textbf{共形不変性}を次で定義する。
+\begin{align}
+&S[X]_{(M,g)}\text{が共形不変}&&\iff \forall F;\text{ 局所共形変換},&& S[F^\ast X]_{(M,g)}=S[X]_{(M,g)}&&
+\end{align}
+これが古典的な共形場理論の定義である。
+\end{oframed}
+
+微分同相不変な$S[X,g]$がWeyl不変ならば
+\begin{align}
+S[F^\ast X]_{(M,g)}=S[F^\ast X,g]=S[X,(F^{-1})^\ast g]=S[X,e^{-\Omega}g]=S[X,g]=S[X]_{(M,g)}
+\end{align}
+より、$S[X]_{(M,g)}$は共形不変となる。しかし逆は成り立たない。
+
+背景時空を固定した作用$S[X]_{(M,g)}$に対して、場$X$の\textbf{エネルギー運動量テンソル}$T^X_{\mu\nu}(x)$を求めるには、$g$を力学変数と思って$S[X]_{(M,g)}=S[X,g]$として、
+\begin{align}\label{defEMtensor}
+T^X_{\mu\nu}\coloneqq -\frac{4\pi}{\sqrt{|\det g|}}\frac{\delta S[X,g]}{\delta g^{\mu\nu}}
+\end{align}
+と定義すればいい。
+
+関数$\Omega\in\text{C}^\infty(M,\R)$による1パラメータWeyl変換群$e^{s\Omega}\ (s\in\R)$を考え、これにより生成される無限小共形変換$\delta_\Omega g= \Omega g$を考えると、共形Killing方程式(\ref{confkilling})から、
+\begin{align}
+\delta_\Omega S[X,g]&=\frac{1}{2}\int d^d x \sqrt{|\det g|}(T^X)^{\mu\nu}\delta_\Omega g_{\mu\nu}\notag\\
+&=\frac{1}{2}\int d^d x \sqrt{|\det g|}\Omega (T^X)^{\mu}_{\ \mu}
+\end{align}
+となる。よって$S[X]_{(M,g)}$を拡張した作用$S[X,g]$のWeyl不変性は$\forall x\in M,\ (T^X)^{\mu}_{\ \mu}(x)=0$となることに同値である。
+
+したがって$(T^X)^{\mu}_{\ \mu}=0$となる作用$S[X]_{(M,g)}$は(古典的に)共形不変になることが分かった。しかし逆は成り立たないことに注意しておく。
+\begin{ex}
+$d$次元平坦空間上の質量$m$の自由スカラー場$\mathcal{L}=\frac{1}{2}((\del X)^2-m^2 X^2)$のエネルギー運動量テンソルは、
+\begin{align}
+\frac{1}{2\pi}T_{\mu\nu}=\del_\mu X \del_\nu X-\frac{1}{2}\eta_{\mu\nu}((\del X)^2-m^2 X^2)
+\end{align}
+で与えられ、そのトレースは
+\begin{align}
+\frac{1}{2\pi}T^\mu_{\ \mu}=\left(1-\frac{d}{2}\right)(\del X)^2+\frac{1}{2}m^2 X^2
+\end{align}
+となる。したがって2次元平坦空間上の零質量$(m=0)$自由スカラー場は古典的に共形不変な理論になる。
+\end{ex}
+
+\begin{ex}
+$d$次元平坦空間上の$U(1)$Yang-Millsゲージ場$\mathcal{L}=-\frac{1}{4}F^2$のエネルギー運動量テンソルは
+\begin{align}
+\frac{1}{2\pi}T_{\mu\nu}=-\eta^{\rho\sigma}F_{\mu\rho}F_{\sigma\mu}+\frac{1}{4}\eta_{\mu\nu}F^2
+\end{align}
+で与えられ、そのトレースは
+\begin{align}
+\frac{1}{2\pi}T^{\mu}_{\ \mu}=\left(\frac{d}{4}-1\right)F^2
+\end{align}
+となる。したがって4次元平坦空間上の電磁場は古典的に共形不変な理論になる。
+\end{ex}
+
+\subsection{Weylアノマリー}
+\ref{subsecclassicalconfsym}節では古典的なWeyl対称性が、エネルギー運動量テンソルのトレースが$0$になることと同値であることを見た。しかし量子論を考えると、計量$g$の経路積分をするときに経路積分測度が対称性を破って期待値$\la T^{\mu}_{\ \mu}\ra$が$0$にならないことがある。このときWeyl対称性は量子論的に破れており、\textbf{Weylアノマリー(Weyl anomaly)}あるいはトレースアノマリーがあるという\footnote{微分同相不変性や共形不変性のアノマリーを考えることもできるが、それらのアノマリーはふつうWeylアノマリーと関係して生じており、微分同相不変/共形不変な正則化を用いることでアノマリーをすべてWeylアノマリーに押し付けることができる。したがってここでは微分同相不変性や共形不変性はアノマリーがないと仮定する。}。
+
+$\la T^\mu_\mu\ra$は質量次元$d$であり大域的共形変換で値が変わらない。一般に$\la T^\mu_\mu\ra$はEuler類$e(x)
+$\footnote{接束$TM$の構造群を$SO(2n)$に簡約したとき、曲率$R$は$so(2n)$値$2$形式となる。Euler類はこの行列$R$に対して、$e(x)=\text{Pf}(R(x))/(2\pi)^n$で定義される、主$SO(2n)$束の特性類である。ただし$\text{Pf}$はパフィアンを表していて、$\text{Pf}(R)^2=\det R$を満たす。}
+と、Weylテンソル$C_{\mu\nu\rho\sigma}(x)
+$\footnote{$d$次元擬Riemann多様体におけるWeylテンソルは
+\begin{align}
+R_{\mu\nu\rho\sigma}=\frac{1}{d-2}\left(g_{\mu\rho}R_{\sigma\nu}-g_{\mu\sigma}R_{\rho\nu}+g_{\nu\sigma}R_{\rho\mu}-g_{\nu\rho}R_{\sigma\mu}-\frac{1}{d-1}R(g_{\mu\rho}g_{\sigma\nu}-g_{\mu\sigma}g_{\rho\nu})\right)+C_{\mu\nu\rho\sigma}
+\end{align}
+で定義される。Weylテンソルは$d(d+1)(d+2)(d-3)/12$個の自由度を持ち、$d\leq 3$次元では消える。またWeylテンソルは計量のWeyl変換に対して不変である。}
+を縮約して得られる質量次元$d$のスカラー量たち$I_i(x)$の線形和になることが知られている\cite{Deser:1993yx}。とくに奇数次元ではEuler類は消え、Weylテンソルを縮約して得られる質量次元が奇数のスカラー量も無いので、Weylアノマリーは出ない。
+
+$2$次元ではEuler類$e$はリッチスカラー$R$であり、Weylテンソルも消えるので、$2$次元多様体でのWeylアノマリーは無次元の定数$c$とリッチスカラー$R$と分配関数$Z$を用いて
+\begin{oframed}
+\begin{align}\label{confanomaly2d}
+\la T^{\mu}_{\ \mu}(x) \ra=-\frac{c}{12}R(x)
+\end{align}
+\end{oframed}
+の形になる。
+
+\section{2次元共形場理論(CFT$_2$)}\label{sec:2dcft}
+ここでは共形対称性をもった2次元の場の量子論の一般論を説明する。共形場理論は$1+1$次元と$1+d\ (d\leq2)$次元で無限小の対称性の性質が大きく異なる。そのため$1+d\ (d\leq2)$次元の共形場理論はしばしば高次元共形場理論と呼ばれ、$1+1$次元共形場理論と区別することが多い。ここでは$1+1=2$次元共形場理論に焦点をあてて、その量子論的な性質を論じる。
+
+2次元共形場理論はBelavin,Polyakov,Zamolodchikov \cite{Polyakov:1970xd}\cite{Belavin:1984vu}によって導入され、スケール不変性を持つ理論や、無限個の対称性を持つ理論として、物理や数理物理のさまざまな分野に関連して発展してきた。とくにVirasoro対称性やCardy公式といった、2次元共形場理論特有の性質はAdS$_3$/CFT$_2$対応においても重要な役割を果たす。
+
+\subsection{プライマリー場}
+ローレンツ不変な場の理論ではローレンツ共変な場が基本的な役割を果たすが、共形場理論においてこれに相当する場はプライマリー場と呼ばれる。
+\begin{oframed}
+共形変換$z\mapsto f(z),\overline{z}\mapsto \overline{f}(\overline{z})$のもとでの場$\Phi$の変換$\Phi\mapsto f^\ast \Phi$が実数$h,\overline{h}$に対して次を満たすとき、$\Phi$を\textbf{共形ウェイト(weight)}$(h,\overline{h})$をもつ\textbf{プライマリー場(primary field)}という。
+\begin{align}
+(f^\ast\Phi)(z,\overline{z})=\Phi(f(z),\overline{f}(\overline{z}))\left(\frac{df(z)}{dz}\right)^h\left(\frac{d\overline{f}(\overline{z})}{d\overline{z}}\right)^{\overline{h}}
+\end{align}
+\end{oframed}
+
+\begin{ex}
+$S^2$上の大域共形変換である並進変換$f_T(z)=z+a$、スケール変換$f_D(z)=e^\alpha z$、回転$f_R(z)=e^{i\theta}z$、特殊共形変換$f_S(z)=z/(1-\overline{c}z)$に対してプライマリー場は
+\begin{align}
+(f_T^\ast\Phi)(z,\overline{z})&=\Phi(z+a,\overline{z}+\overline{a})\label{primarytranslation}\\
+(f_D^\ast\Phi)(z,\overline{z})&=\Phi(e^\alpha z,e^\alpha\overline{z})e^{\alpha (h+\overline{h})}\label{primarydilation}\\
+(f_R^\ast\Phi)(z,\overline{z})&=\Phi(e^{i\theta}z,e^{-i\theta}\overline{z})e^{i\theta (h-\overline{h})}\label{primaryrotation}\\
+(f_S^\ast\Phi)(z,\overline{z})&=\Phi\left(\frac{z}{1-\overline{c}z},\frac{\overline{z}}{1-c\overline{z}}\right)\frac{1}{(1-\overline{c}z)^h(1-c\overline{z})^{\overline{h}}}
+\end{align}
+と変換する。したがって$h+\overline{h}$は$\Phi$のスケーリング次元を与え、$h-\overline{h}$は$\Phi$のスピンを与えることが分かる。
+\end{ex}
+
+\subsection{共形Ward恒等式}
+次に、共形対称性を量子論的に扱うさいに重要になる共形Ward恒等式を紹介する。
+
+コンパクトRiemann面$(\Sigma,g)$を背景にもつ理論$S[X]_{(M,g)}=S[X,g]$が古典的にも量子的にも微分同相不変であるときを考える。このとき、正則・反正則とは限らないベクトル場$v$によって生成される無限小微分同相$\delta_v$での、一般の場$\Phi_i$の相関関数の変換性を考えることで、微分同相不変性に対するWard恒等式を得る。
+\begin{align}
+\frac{1}{2\pi}\int_\Sigma d^2 x \sqrt{g} \nabla_\mu v_\nu(x) \la T^{\mu\nu}(x)\prod_{i=1}^N \Phi_i(x_i) \ra+ \sum_{i=1}^{N} \la \Phi_1(x_1)\cdots\delta_v \Phi_i(x_i)\cdots \Phi_N(x_N) \ra=0
+\end{align}
+
+さらに、$S[X,g]$はWeyl対称性を持ち、Weylアノマリーも無いとする。このとき$T^{\mu}_{\ \mu}=0$となるが、この条件は複素座標では$T_{z\overline{z}}=0$と書ける。したがって複素座標での$T_{\mu\nu}$は$T_{zz},T_{\overline{z}\overline{z}}$成分しか持たない。局所的な正則ベクトル場$v$によって生成される無限小共形変換による変分はエネルギー運動量テンソルの$T_{zz}$成分のみを出して、上のWard恒等式は
+\begin{align}\label{confward}
+\frac{1}{\pi}\int_\Sigma d^2 z \overline{\del}v(z)\la T_{zz}(z,\overline{z})\prod_{i=1}^N \Phi_i(z_i,\overline{z}_i) \ra+ \sum_{i=1}^{N} \la \Phi_1(z_1,\overline{z}_1)\cdots\delta_v \Phi_i(z_i,\overline{z}_i)\cdots \Phi_N(z_N,\overline{z}_N) \ra=0
+\end{align}
+となる。これを\textbf{共形Ward恒等式}という。反正則ベクトル場で変分すれば、$T_{\overline{z}\overline{z}}$に対する共形Ward恒等式を得る。
+
+共形Ward恒等式は、共形対称性に対する量子論的な保存則を表しており、共形場理論を考える上で重要な役割を果たす。以下では共形Ward恒等式から導出される、共形場理論特有の性質を見ていく。
+
+\subsub{エネルギー運動量テンソルの正則性}
+とくに局所的な正則ベクトル場$v$として、演算子$\Phi_i$の挿入点$(z_i,\overline{z}_i)$の近傍で$0$になるものをとれば、$\delta_v \Phi_i=0$であり、(\ref{confward})を部分積分して
+\begin{align}
+\la \overline{\del} T_{zz}(z,\overline{z})\prod_{i=1}^N \Phi_i(z_i,\overline{z}_i) \ra=0
+\end{align}
+を得る。したがって$\Phi_i$の挿入点近傍以外では$T_{zz}$は正則であることが分かる。同様に、$T_{\overline{z}\overline{z}}$は場の挿入点近傍以外で反正則である。そこで以後$T(z)=T_{zz}(z),\overline{T}(\overline{z})=T_{\overline{z}\overline{z}}(\overline{z})$と書く。
+
+$T_{zz}$の正則性は、古典的にはエネルギー保存則に他ならない。古典的な運動方程式のもとでエネルギー運動量保存$\del^\mu T_{\mu\nu}=0$が成り立ち、これを複素座標で書けば、
+\begin{align}
+\overline{\del} T_{zz}=0,\quad \del T_{\overline{z}\overline{z}}=0
+\end{align}
+であり、$T_{zz},T_{\overline{z}\overline{z}}$は正則・反正則である。
+\subsub{大域的共形変換}
+大域共形変換が共形Killingベクトル場(=大域的に定義された正則ベクトル場)によって生成されている場合、共形Ward恒等式(\ref{confward})の第1項は正則性から消えて、
+\begin{align}
+\sum_{i=1}^{N} \la \Phi_1(z_1,\overline{z}_1)\cdots\delta_v \Phi_i(z_i,\overline{z}_i)\cdots \Phi_N(z_N,\overline{z}_N) \ra=0
+\end{align}
+となる。つまり相関関数$\la \Phi_1(z_1,\overline{z}_1)\cdots\Phi_N(z_N,\overline{z}_N) \ra$は正則ベクトル場によって生成される大域共形変換で不変になる。したがって$S^2$上の相関関数は$PSL(2,\C)$不変になり、$T^2$上の相関関数は$U(1)\times U(1)$不変になる。
+
+\begin{ex}
+特に$S^2$上の相関関数の$PSL(2,\C)$不変性に注目してみる。$\dim_\C PSL(2,\C)=3$なので$S^2$上のプライマリー場の$N$点関数($N\leq 3$)は、$PSL(2,\C)$不変性から定数倍を除いて完全に決定される。$N\geq 4$については$PSL(2,\C)$不変な量である複比(cross ratio)
+\begin{align}
+x_{ij}^{kl}=\frac{(z_i-z_j)(z_k-z_l)}{(z_i-z_k)(z_j-z_l)}
+\end{align}
+への依存性が、相関関数の$PSL(2,\C)$不変性のみからは決定できず、それぞれの共形場理論によって異なる。
+
+したがって共形ウェイト$(h_i,\overline{h}_i)$をもつプライマリー場$\Phi_i$の$S^2$上の$2,3,4$点関数は次のようになる。
+\begin{oframed}
+\begin{description}
+	\item[$2$点関数] 
+	\begin{align}
+	\la \Phi_1(z_1,\overline{z}_1)\Phi_2(z_2,\overline{z}_2) \ra = \left\{
+	\begin{array}{ll}
+	\dfrac{(\text{const})}{(z_1-z_2)^{2h_1}(\overline{z}_1-\overline{z}_2)^{2\overline{h}_1}}\quad &(h_1=h_2,\overline{h}_1=\overline{h}_2)\bigskip\\
+	0 &(otherwise)
+	\end{array}
+	\right.
+	\end{align}
+	
+	\item[$3$点関数] 
+	\begin{align}
+	&\la \Phi_1(z_1,\overline{z}_1)\Phi_2(z_2,\overline{z}_2)\Phi_3(z_3,\overline{z}_3) \ra \notag\\
+	&= (\text{const})\times \frac{1}{(z_1-z_2)^{h_1+h_2-h_3}(z_2-z_3)^{h_2+h_3-h_1}(z_3-z_1)^{h_3+h_1-h_2}}\notag\\
+	&\qquad\qquad \times \frac{1}{(\overline{z}_1-\overline{z}_2)^{\overline{h}_1+\overline{h}_2-\overline{h}_3}(\overline{z}_2-\overline{z}_3)^{\overline{h}_2+\overline{h}_3-\overline{h}_1}(\overline{z}_3-\overline{z}_1)^{\overline{h}_3+\overline{h}_1-\overline{h}_2}}
+	\end{align}
+	
+	\item[$4$点関数] 
+	\begin{align}
+	&\la \Phi_1(z_1,\overline{z}_1)\Phi_2(z_2,\overline{z}_2)\Phi_3(z_3,\overline{z}_3)\Phi_4(z_4,\overline{z}_4) \ra \notag\\
+	&= \prod_{i<j}(z_i-z_j)^{-h_i-h_j+\frac{1}{3}\sum_{k=1}^{4}h_k}(\overline{z}_i-\overline{z}_j)^{-\overline{h}_i-\overline{h}_j+\frac{1}{3}\sum_{k=1}^{4}\overline{h}_k}F(x,\overline{x})
+	\end{align}
+\end{description}
+\end{oframed}
+\end{ex}
+
+\subsub{2つの$T$の挿入に対する共形Ward恒等式}
+$2$次元でのWeylアノマリーの式(\ref{confanomaly2d})から、
+\begin{align}
+\la T^\mu_\mu(x) \Phi \ra = -\frac{c}{12}R(x)\la \Phi \ra
+\end{align}
+を得る。上の式で計量の$g_{\overline{z}\overline{z}}$成分を平坦計量の周りで摂動させてエネルギー運動量テンソルの正則成分$T$を出すと、共形Ward恒等式から
+\begin{align}\label{confwardEMtensor}
+\frac{1}{\pi}\int_{M}d^2y (\overline{\del}v^z(y))\la  T(y)T(x)\Phi \ra+\la (\delta_v T)(x) \Phi \ra+\la T(x)\delta_v \Phi\ra =0
+\end{align}
+を得ることができる。ただし$T$の無限小正則変換$v$に対する変分$\delta_v T$を
+\begin{align}
+\delta_v T=v \del T+2(\del v)T+\frac{c}{12}\del^3 v
+\end{align}
+で定義した。これに対する有限変換は
+\begin{oframed}
+\begin{align}\label{transfofEmtensor}
+(f^\ast T)(z)&=T(f(z))\left( \frac{\del f(z)}{\del z} \right)^{2}+\frac{c}{12}\{f(z),z\}\\
+\{f(z),z\}&=\frac{2f'f'''-3(f'')^2}{2f'^2}
+\end{align}
+\end{oframed}
+となる。$\{\ ,\ \}$は\textbf{Schwarz微分(Schwarzian derivative)}と呼ばれる。
+エネルギー運動量テンソルは共形変換に対してテンソルとして変換せず、Weylアノマリーによって$c$に比例する補正を受けた形になっている。このことは量子論を考えたときに現れる効果であり、$2$次元共形場理論の重要な性質の$1$つである。
+
+\subsection{演算子積展開}
+一般に、演算子の積の相関関数$\la\Phi_1(x_1)\cdots \Phi_n(x_n)\ra$を、演算子の族$\{O_i\}$を用いて
+\begin{align}
+\Phi_1(x_1)\cdots \Phi_n(x_n)=\sum c_i(x;x_1,\cdots,x_n) O_i(x)
+\end{align}
+と展開することを\textbf{演算子積展開(operator product expansion, OPE)}という。ただし上の等式は期待値$\la \ \ra$をとって成り立つ式であるが、演算子積展開の慣習として、括弧$\la \ \ra$を省略して書いている。
+
+共形Ward恒等式(\ref{confward})はエネルギー運動量テンソル$T$と場との演算子積展開を与えており、例えば共形ウェイト$(h,\overline{h})$のプライマリー場$\Phi$と$T$との演算子積展開は、共形Ward恒等式から
+\begin{oframed}
+\begin{align}
+T(z)\Phi(w,\overline{w})=\frac{h}{(z-w)^2}\Phi(w,\overline{w})+\frac{1}{z-w}\del_w \Phi(w,\overline{w})+((z-w)\text{の正則関数})
+\end{align}
+\end{oframed}
+となることが分かる。実際、$T(z)\Phi(w,\overline{w})$をLaurant展開したときに、$(z-w)^{-1}$の係数が$\del_w \Phi(w,\overline{w})$になることはプライマリー場が無限小並進変換に対して不変であることから分かり、$(z-w)^{-2}$の係数が$h\Phi(w,\overline{w})$になることはプライマリー場の無限小スケール・回転変換性から分かる。さらにLaurant展開の発散部分が高々$2$次になることはプライマリー場の無限小特殊共形変換に対する変換性から分かる。したがって逆に、上のような演算子積展開を持つ$\Phi$はプライマリー場に限られることも分かる。
+
+一般に二つの演算子の挿入点が近づくと、紫外発散を生じるが、$\la T(z)\Phi(w) \ra$の発散は$(z-w)^{-2}$の$2$次発散になる。これはプライマリー場を特徴づける重要な性質である。
+
+また、$\la T(z)T(w) \ra$の演算子積展開は(\ref{confwardEMtensor})より
+\begin{align}\label{TTOPE}
+T(z)T(w)=\frac{c}{2(z-w)^4}+\frac{2}{(z-w)^2}T(w)+\frac{1}{z-w}\del_w T(w)+((z-w)\text{の正則関数})
+\end{align}
+となる。右辺第$1$項はWeylアノマリーによるエネルギー運動量テンソルの共形変換性への補正(\ref{transfofEmtensor})に対応している。
+
+\subsection{Virasoro代数}
+\subsub{交換関係}
+平面$\C$上のエネルギー運動量テンソル$T(z),\overline{T}(\overline{z})$を$z=0,\overline{z}=0$の周りでローラン展開したときの展開係数を
+\begin{align}
+&&T(z)&=\sum_{m=-\infty}^{\infty}\frac{L_m}{z^{m+2}},&\overline{T}(\overline{z})&=\sum_{m=-\infty}^{\infty}\frac{\overline{L}_m}{\overline{z}^{m+2}}&&\\
+&&L_m&\coloneqq \oint_{0} \frac{dz}{2\pi i}z^{m+1}T(z)&\overline{L}_m&\coloneqq -\oint_{0} \frac{d\overline{z}}{2\pi i}\overline{z}^{m+1}\overline{T}(\overline{z})&&
+\end{align}
+で定める。ただし$\oint_{0}$は$0\in\C$周りの周回積分を表している。
+
+このときエネルギー運動量テンソルの演算子積展開(\ref{TTOPE})より、
+\begin{align}
+[L_m,L_n]&=\oint_{0}\frac{dw}{2\pi i}\oint_{w}\frac{dz}{2\pi i}z^{m+1}T(z)w^{n+1}T(w)\notag\\
+&=\oint_{0}\frac{dw}{2\pi i}w^{n+1}\oint_{w}\frac{dz}{2\pi i}z^{m+1}\left( \frac{c}{2(z-w)^4}+\frac{2}{(z-w)^2}T(w)+\frac{1}{z-w}\del T(w) \right)\notag\\
+&=\oint_{0}\frac{dw}{2\pi i}w^{n+1} \left( \frac{c}{2}\frac{(m+1)m(m-1)}{3!}w^{m-2}+2(m+1)w^mT(w)+w^{m+1}\del T(w)\right)\notag\\
+&=(m-n)L_{m+n}+\frac{c}{12}m(m^2-1)\delta_{m+n,0}
+\end{align}
+の交換関係を得る。
+
+\begin{oframed}
+交換関係
+\begin{align}
+[L_m,L_n]&=(m-n)L_{m+n}+\frac{c}{12}m(m^2-1)\delta_{m+n,0}\\
+[\overline{L}_m,\overline{L}_n]&=(m-n)\overline{L}_{m+n}+\frac{c}{12}m(m^2-1)\delta_{m+n,0}
+\end{align}
+により定まるLie代数を\textbf{Virasoro代数(Virasoro algebra)}という。Weylアノマリーの係数$c$はVirasoro代数の中心の生成元になっており、$c$は\textbf{中心電荷(central charge)}と呼ばれる。
+\end{oframed}
+
+とくに$L_{-1},L_0,L_1$は交換関係
+\begin{align}
+[L_0,L_{\pm 1}]=\mp L_{\pm 1},\ [L_1,L_{-1}]=2L_0
+\end{align}
+を満たしており、$L_{-1},L_0,L_1,\overline{L}_{-1},\overline{L}_0,\overline{L}_1$は$PSL(2,\C)$のLie代数$sl(2,\C)$の生成子になっている。$L_{-1}\pm \overline{L}_{-1}$は実軸・虚軸方向への並進変換の生成子に対応し、$L_0+\overline{L}_0$はスケール変換、$L_0-\overline{L}_0$は原点周りの回転、$L_1\pm \overline{L}_1$は特殊共形変換の生成子に対応している。$L_m,\overline{L}_m$は無限小共形変換に対する無限個の保存量であり、Virasoro代数は高次元共形場理論には無い2次元特有の高い対称性を表している。
+
+共形変換$z=e^{-iw}$によって平面$\C-\{0\}$を円筒$S^1\times \R$に移す(図\ref{fig:plane2cylinder})と、エネルギー運動量テンソルは中心電荷$c$のぶんだけ非テンソル的な変換をして
+\begin{align}
+T^{S^1\times \R}(w)=\left(\frac{\del z}{\del w}\right)^2 T(z)+\frac{c}{24}
+\end{align}
+と変換する。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{plane2cylinder.pdf}
+	\caption{共形変換$z=e^{-iw}$によって、平面$\C-\{0\}$と円筒$S^1\times \R$が移りあう。平面の動径方向は円筒の時間方向に対応し、平面の角度方向は円筒の円周方向に対応する。}
+	\label{fig:plane2cylinder}
+\end{figure}
+
+したがって円筒座標でのエネルギー運動量テンソルのLaurant展開係数$L_m^{S^1\times \R}$は平面座標での$L_m$と
+\begin{align}
+L_m^{S^1\times \R}=L_m-\delta_{m,0} \frac{c}{24}
+\end{align}
+で関係しており、$L_m^{S^1\times \R}$は交換関係
+\begin{align}\label{vircrCylinder}
+[L_m^{S^1\times \R},L_n^{S^1\times \R}]=(m-n)L_{m+n}^{S^1\times \R}+\frac{c}{12}m^3\delta_{m+n,0}
+\end{align}
+を満たす。円筒座標の$\IM w$方向を時間と見なせば、円筒座標$w$での時間並進は平面座標$z$でのスケール変換そのものであり、円筒座標のハミルトニアンは
+\begin{align}\label{hamincylinder}
+H^{S^1\times \R}&=\oint \frac{dw^1}{2\pi} T_{00}(w)\notag\\
+&=L_0^{S^1\times \R}+\overline{L}_0^{S^1\times \R}\\
+&=L_0+\overline{L}_0-\frac{c}{12}
+\end{align}
+となる。
+
+\subsub{ユニタリー共形場理論}
+ユニタリー共形場理論(unitary conformal field theory)とは、Virasoro代数の生成子$L_m,\overline{L}_m$が$L_m^\dagger=L_{-m},\overline{L}_m^\dagger=\overline{L}_{-m}$となるような内積$\la\ |\ \ra$を持ったヒルベルト空間に表現された共形場理論のことである。
+
+ユニタリー共形場理論の中心電荷$c$と最高ウェイト$h$は強い制限を受けて、点$(c,h)$は領域$c\geq 1,h\geq 0$にあるか、$0\leq c<1$の離散的な点
+\begin{align}
+c&=1-\frac{6}{m(m+1)}&&(m=2,3,4,\cdots)\\
+h&=\frac{(r(m+1)-sm)^2-1}{4m(m+1)}&&(1\leq r\leq m-1,\ 1\leq s\leq m)
+\end{align}
+にしか存在しないことが知られている。
+
+とくに中心電荷が$c=1-\frac{6}{m(m+1)}\ (m=2,3,4,\cdots)$となるような、$0\leq c <1$のユニタリー共形場理論を\textbf{ユニタリーミニマル模型}と呼び、$\mathcal{M}_m$で表す。
+
+たとえば中心電荷$c=1/2$の$\mathcal{M}_3$はIsing模型と呼ばれる。これは2次元格子上のIsing模型
+\begin{align}
+H=-\frac{J}{2}\sum_{i,j} \sigma_i \sigma_j
+\end{align}
+の臨界点での連続極限に相当する共形場理論になっている。$\mathcal{M}_3$には3つのプライマリー場$1,\varepsilon,\sigma$が存在し、それぞれ共形ウェイト$0,1/2,1/16$を持っている。$1$は恒等演算子である。$\varepsilon,\sigma$はそれぞれエネルギー演算子、スピン演算子と呼ばれ、それぞれ格子上のスピン変数、エネルギーの連続極限に相当する。
+
+\subsection{共形境界条件と二重化のトリック}\label{subsecdoubling}
+\begin{oframed}
+境界を持った$2$次元Riemann多様体$\Sigma$上の共形場理論を考える。境界$\del\Sigma$の単位接線・法線ベクトルを$t,n$で書くとき、次の境界条件は\textbf{共形境界条件(conformal boundary condition)}と呼ばれる\cite{Cardy:1989ir}。
+\begin{align}
+T_{\mu\nu} t^\mu n^\nu =0\text{  on }\del \Sigma
+\end{align}
+複素座標では$n=it,\overline{n}=-i\overline{t}$であり、上の共形境界条件は
+\begin{align}
+T_{zz}=T_{\overline{z}\overline{z}}\text{  on }\del \Sigma
+\end{align}
+と書ける。共形境界条件を課した、境界付き多様体上の共形場理論を\textbf{境界共形場理論(boundary conformal field theory, BCFT)}という。
+\end{oframed}
+
+共形場理論はスケール変換に対する対称性を持つため、境界つきの空間上での共形場理論の物理量を考える際に、境界条件は非常に重要になる。下で見るように、共形境界条件はVirasoro対称性を半分だけ保つ。高次元共形場理論でも共形境界条件を考えることができるが、そのときも理論の$SO(2,d)$対称性を半分だけ保つ境界条件になっている。
+
+\begin{ex}
+上半平面$\UHP$上の共形場理論は実軸を境界として持ち、共形境界条件$T_{zz}(x)=T_{\overline{z}\overline{z}}(x)\ (x\in\R)$を課すことを考える。このとき$T$は実軸上実数をとり、下半平面の点$z$での$T_{zz}(z)$を上半平面の点$\overline{z}$を用いて
+\begin{align}
+T_{zz}(z)\coloneqq T_{\overline{z}\overline{z}}(\overline{z})=\overline{T_{zz}(\overline{z})}\quad (\IM z<0)
+\end{align}
+で定めると、Schwartzの鏡像原理から$T$は下半平面へ解析接続される。同様にして$\overline{T}$も下半平面へ反正則に解析接続できる。このようにエネルギー運動量テンソルの解析接続を行う方法は\textbf{二重化のトリック(doubling trick)}と呼ばれる。
+
+上半平面上でのVirasoro代数の生成子$L_m^\UHP$を
+\begin{align}
+L_m^\UHP\coloneqq \oint_{(\UHP\text{内の半円})}\frac{1}{2\pi i}\left( dz z^{m+1}T(z)-d\overline{z} \overline{z}^{m+1}\overline{T}(\overline{z}) \right)
+\end{align}
+で定めると、二重化のトリックから半円の積分は$0\in\C$周りの周回積分になり、
+\begin{align}
+L_m^\UHP&=\oint_{0} \frac{dz}{2\pi i}z^{m+1}T(z)\\
+&=-\oint_{0} \frac{d\overline{z}}{2\pi i}\overline{z}^{m+1}\overline{T}(\overline{z})
+\end{align}
+となる。したがって上半平面では、平面$\C$上のVirasoro代数の生成子$L_m,\overline{L}_m$が共通のものとなり、一つの$L_m^\UHP$のみがVirasoro代数の生成子となる。交換関係は平面$\C$のときと同じで、
+\begin{align}
+[L_m^\UHP,L_n^\UHP]&=(m-n)L_{m+n}^\UHP+\frac{c}{12}m(m^2-1)\delta_{m+n,0}
+\end{align}
+である。このことは、上半平面の自己同型群が$PSL(2,\R)$で表されることに対応しており、$L_{-1}^\UHP,L_0^\UHP,L_1^\UHP$がその生成子になっている。
+\end{ex}
+
+\subsection{Cardy公式}
+最後に、トーラス上の共形場理論がもつモジュラー不変性から、有限温度の円筒上の2次元共形場理論の高エネルギーでの状態密度を記述するCardy公式を導く。
+
+モジュライパラメータ$\tau=\tau_1+i\tau_2$を持ち、$z\sim z+2\pi \sim z+2\pi\tau$となる平坦トーラス$ds^2=dzd\overline{z}$上の共形場理論を考える。トーラスには独立な共形Killingベクトルが$2$つ存在し、それぞれ小円・大円の接線方向への並進変換である。これらの変換に対応する保存量は(\ref{hamincylinder})と同様に
+\begin{align}
+H^{S^1\times \R}&=L_0^{S^1\times \R}+\overline{L}_0^{S^1\times \R}=L_0+\overline{L}_0-\frac{c}{12}\label{hamtorus}\\
+P^{S^1\times \R}&=L_0^{S^1\times \R}-\overline{L}_0^{S^1\times \R}=L_0-\overline{L}_0\label{momtorus}
+\end{align}
+である。したがってトーラス上の共形場理論の分配関数は
+\begin{align}\label{torusPF}
+Z_{T^2}(\tau)&=\Tr \exp\left(-2\pi \tau_2 H^{S^1\times \R}+2\pi i \tau_1 P^{S^1\times \R}\right)\\
+&=\Tr (e^{2\pi i \tau (L_0-\frac{c}{24})}e^{-2\pi i \overline{\tau} (\overline{L}_0-\frac{c}{24})})
+\end{align}
+となることが分かる。
+
+
+平坦トーラスは$\tau$を$PSL(2,\Z)$変換しても共形同値であったから、共形場理論のトーラス分配関数はモジュライパラメータの$PSL(2,\Z)$変換に対する不変性(\textbf{モジュラー不変性})をもち、
+\begin{oframed}
+\begin{align}
+Z_{T^2}(\tau)=Z_{T^2}\left(-\frac{1}{\tau}\right)=Z_{T^2}(\tau+1)
+\end{align}
+\end{oframed}
+を満たすことが要請される。特にモジュライパラメータが純虚数$\tau=i\beta$のときに、$\beta$を系の逆温度と見なすと、分配関数は$\beta\leftrightarrow \beta^{-1}$の変換で不変であり、高温と低温が双対な理論になっていることが分かる。
+
+
+このモジュラー不変性を使って、ユニタリー共形場理論に対して高温ないし高エネルギー極限でのエントロピーを計算したい。
+\subsub{カノニカル分布を用いる方法}
+$\tau=i\beta$のときの分配関数は、モジュラー不変性から
+\begin{align}
+Z_{T^2}(\beta)&=\Tr (e^{-2\pi \beta (L_0+\overline{L}_0-\frac{c}{12})})\\
+&=\Tr (e^{-2\pi \beta^{-1} (L_0+\overline{L}_0-\frac{c}{12})})
+\end{align}
+を満たす。
+
+いまユニタリー共形場理論を考えると$L_0,\overline{L}_0$はエルミート演算子であり、それぞれの最小固有値を$E_0,\overline{E}_0$と書く。このとき$\beta\to 0$の高温極限において分配関数は
+\begin{align}
+Z_{T^2}(\beta)\sim e^{-2\pi \beta^{-1} (E_0+\overline{E}_0-\frac{c}{12})}
+\end{align}
+と評価できる。
+
+したがって$\beta\to 0$でのHelmholtz自由エネルギーは
+\begin{align}
+F(\beta)=-(2\pi\beta)^{-1}\log Z_{T^2}(\beta)\sim \beta^{-2}\left(E_0+\overline{E}_0-\frac{c}{12}\right)
+\end{align}
+と評価され、同様に熱力学的エントロピーは$\beta\to 0$で
+\begin{align}
+S_\text{thermal}(\beta)=-\frac{\del F(\beta)}{\del (2\pi\beta)^{-1}}
+\sim 4\pi\beta^{-1}\left( \frac{c}{12}-(E_0+\overline{E}_0) \right)
+\end{align}
+と評価できる。
+
+特に規格化可能で$E_0=\overline{E}_0=0$を満たす真空が存在するようなユニタリー共形場理論については
+\begin{oframed}
+\begin{align}\label{cardyCE}
+S_\text{thermal}(\beta)\sim \frac{c}{3}\pi \beta^{-1}
+\end{align}
+\end{oframed}
+となる。特に高温極限のエントロピーは、理論の詳細によらず中心電荷$c$のみで決まることが分かる。
+
+
+\subsub{ミクロカノニカル分布を用いる方法}
+分配関数$Z_{T^2}(\tau)$を、エネルギー$E+\overline{E}-c/12$での状態密度$\rho(E)\rho(\overline{E})$を用いて
+\begin{align}
+Z_{T^2}(\tau)=\int_{E_0}^{\infty}dE \rho(E)e^{2\pi i\tau (E-\frac{c}{24})} \int_{\overline{E}_0}^{\infty} d\overline{E} \rho(\overline{E})e^{-2\pi i\overline{\tau}(\overline{E}-\frac{c}{12})}
+\end{align}
+と表示するとき、Boltzmannエントロピーは
+\begin{align}
+S_\text{Boltzmann}(E+\overline{E}-c/12)=\log \rho(E)\rho(\overline{E})
+\end{align}
+で定義される。これを$E,\overline{E}\gg c/24$の高エネルギー極限で漸近評価したい。
+
+状態密度は分配関数の逆Laplace変換で書けて、
+\begin{align}
+\rho(E)&=\oint d\tau Z(\tau)e^{-2\pi i\tau (E-\frac{c}{24})}
+\end{align}
+となる。$E_0,\overline{E}_0<c/24$のとき、分配関数は$\tau\sim 0$で$Z_{T^2}(\tau)\sim e^{-2\pi i \tau^{-1} (E_0-\frac{c}{24})}e^{2\pi i \overline{\tau}^{-1} (\overline{E}_0-\frac{c}{24})}
+$と特異性を持つので、上の逆Laplace変換を
+\begin{align}
+\rho(E)\sim \oint d\tau \exp\left(-2\pi i \left(\tau (E-\frac{c}{24})+\tau^{-1}(E_0-\frac{c}{24}) \right) \right)
+\end{align}
+と評価できる。$E\gg c/24$の高エネルギー極限で上の積分を鞍点法で近似すると、鞍点は
+\begin{align}
+\tau_\ast =i\sqrt{\frac{c/24-E_0}{E-c/24}}
+\end{align}
+と決まり、
+\begin{align}
+\rho(E)\sim \exp\left( 2\pi\sqrt{\left(\frac{c}{6}-4E_0\right)\left(E-\frac{c}{24}\right)} \right)
+\end{align}
+と評価できる。この密度行列の漸近評価式は\textbf{Cardy公式(Cardy formula)}\cite{Cardy:1991kr}と呼ばれる。
+
+したがって$E,\overline{E}\gg c/24$の高エネルギー極限でのBoltzmannエントロピーは
+\begin{align}
+S_\text{Boltzmann}(E+\overline{E}-c/12)\sim 2\pi\sqrt{\left(\frac{c}{6}-4E_0\right)\left(E-\frac{c}{24}\right)}+2\pi\sqrt{\left(\frac{c}{6}-4\overline{E}_0\right)\left(\overline{E}-\frac{c}{24}\right)}
+\end{align}
+と評価できる。
+
+特に規格化可能で$E_0=\overline{E}_0=0$を満たす真空が存在するようなユニタリー共形場理論については
+\begin{oframed}
+\begin{align}\label{cardyMCE}
+S_\text{Boltzmann}(E+\overline{E}-c/12)\sim 2\pi\sqrt{\frac{c}{6}\left(E-\frac{c}{24}\right)}+2\pi\sqrt{\frac{c}{6}\left(\overline{E}-\frac{c}{24}\right)}
+\end{align}
+\end{oframed}
+となる。特に高エネルギー極限のエントロピーは、理論の詳細によらず中心電荷$c$のみで決まることが分かる。
+
+
+\section{2次元零質量自由スカラー場}\label{sec:2dscalar}
+ここでは\ref{sec:2dcft}で導入した2次元共形場理論の具体例として、2次元零質量自由スカラー場の頂点演算子の相関関数を計算する。2次元零質量自由スカラー場は、弦理論で重要な役割を果たすPolyakov作用に現れ、頂点演算子とは外線の閉弦に対応する演算子である。したがって以下で計算する相関関数は、弦理論の相関関数の計算にも応用できる。
+
+\subsection{頂点演算子}
+\subsub{正規順序}
+以下では2次元平面上の零質量自由実スカラー場$X(z,\overline{z})$の理論を考える。
+\begin{oframed}
+\begin{align}
+S[X]_{\C}=\frac{1}{8\pi}\int_\C d^2 x \del^\mu X \del_\mu X=\frac{1}{4\pi}\int_\C d^2 z \del X \overline{\del} X
+\end{align}
+\end{oframed}
+
+運動方程式は波動方程式$\la \del\overline{\del}X \ra_\C=0$であり、解は正則・反正則な部分$X_L,X_R$に分解できる。
+\begin{align}
+X(z,\overline{z})=X_L(z)+X_R(\overline{z})
+\end{align}
+
+平面上の2点グリーン関数$G(z,\overline{z})=\la X(z,\overline{z})X(0,0)\ra_\C$はラプラシアンの積分核$-\laplacian G(z,\overline{z})=2\pi\delta(z,\overline{z})$であり、
+\begin{align}
+G(z,\overline{z})=-\log|z|^2
+\end{align}
+となる。つまり場$X$の挿入点が近づくとき、相関関数は$\log$発散する。
+
+この$\log$発散の正則化として、\textbf{正規順序(normal order)}$\colon \ \colon $を
+\begin{align}
+\colon X(z,\overline{z})X(0,0)\colon \coloneqq X(z,\overline{z})X(0,0)+\log|z|^2
+\end{align}
+で定める\footnote{この定義は、$X$の生成消滅演算子の順番を並べ替えるものとして定義した正規順序に一致する。}。一般の$X$の汎関数$F[X]$の正規順序はWick縮約をとって
+\begin{align}
+\colon F[X](z,\overline{z})\colon =\exp\left(\frac{1}{2}\int d^2 z_1 d^2 z_2 \log|z_1-z_2|^2 \frac{\delta}{\delta X(z_1,\overline{z}_1)}\frac{\delta}{\delta X(z_2,\overline{z}_2)} \right)F[X](z,\overline{z})
+\end{align}
+で定義する。このとき正規順序化された2つの演算子$\colon F[X]\colon ,\colon G[X]\colon $の積は
+\begin{align}
+\colon F[X]\colon \colon G[X]\colon =\exp\left( -\int d^2 z_1 d^2 z_2 \log|z_1-z_2|^2 \frac{\delta}{\delta X_F(z_1,\overline{z}_1)}\frac{\delta}{\delta X_G(z_2,\overline{z}_2)} \right)\colon F[X]G[X]\colon 
+\end{align}
+となることに注意する。ただし$\delta/\delta X_F,\delta/\delta X_G$はそれぞれ$F[X],G[X]$に対する汎関数微分を表している。
+
+\subsub{エネルギー運動量テンソル}
+エネルギー運動量テンソルは正規順序をとって
+\begin{align}
+T_{\mu\nu}&=-\frac{1}{2}\colon \left(\del_{\mu}X\del_{\nu}X-\frac{1}{2}\eta_{\mu\nu}\del_{\rho}X\del^{\rho}X\right)\colon \\
+T&=-\frac{1}{2}\colon \del X_L\del X_L\colon \\
+\overline{T}&=-\frac{1}{2}\colon \overline{\del} X_R\overline{\del} X_R\colon 
+\end{align}
+で定義する。このとき$TT$の演算子積展開の発散項は
+\begin{align}
+T(z)T(0)&=\frac{1}{4}\colon \del X_L(z)\del X_L(z)\colon \colon \del X_L(0)\del X_L(0)\colon \\
+&=\frac{1}{4}\exp\left(-\int dz_1 dz_2 \log(z_1-z_2) \frac{\delta}{\delta X_{L,T}(z_1)}\frac{\delta}{\delta X_{L,V}(z_2)} \right)\notag\\
+&\qquad \colon \del X_L(z)\del X_L(z)\colon \colon \del X_L(0)\del X_L(0)\colon \\
+&\sim \frac{1}{2z^4}+\frac{2}{z^2}T(0)+\frac{1}{z}\del T(0)
+\end{align}
+となる。よって2次元零質量自由スカラー場の中心電荷は$c=1$である。
+
+\subsub{頂点演算子}
+$V_{(k_L,k_R)}(z,\overline{z})\coloneqq \colon e^{ik_L X_L(z)+ik_R X_R(\overline{z})}\colon $で定義された演算子$V_{(k_L,k_R)}$を\textbf{頂点演算子(vertex operator)}という。とくに$k_L=k_R=k$のときの頂点演算子を$\colon e^{ikX(z,\overline{z})}\colon $と書く。
+
+頂点演算子とエネルギー運動量テンソルの発散項は
+\begin{align}
+T(z)V_{(k_L,k_R)}(0,0)&=-\frac{1}{2}\colon \del X_L(z)\del X_L(z)\colon \colon e^{ik_L X_L(0)+ik_R X_R(\overline{0})}\colon \\
+&=-\frac{1}{2}\exp\left(-\int dz_1 dz_2 \log(z_1-z_2) \frac{\delta}{\delta X_{L,T}(z_1)}\frac{\delta}{\delta X_{L,V}(z_2)} \right)\notag\\
+&\qquad \colon \del X_L(0)\del X_L(0)e^{ik_L X_L(0)+ik_R X_R(\overline{0})}\colon \\
+&\sim \frac{k_L^2/2}{z^2}V_{(k_L,k_R)}(0,0)+\frac{ik_L}{z}\colon \del X_L(0)e^{ik_L X_L(0)+ik_R X_R(\overline{0})}\colon 
+\end{align}
+となるから、$V_{(k_L,k_R)}$はウェイト$(k_L^2/2,k_R^2/2)$のプライマリー場になる。
+
+また、頂点演算子同士の演算子積展開の発散項は
+\begin{align}\label{vertexopOPE}
+V_{(k_{L1},k_{R1})}(z,\overline{z})V_{(k_{L2},k_{R2})}(0,0)\sim z^{k_{L1}k_{L2}}\overline{z}^{k_{R1}k_{R2}} V_{(k_{L1}+k_{L2},k_{R1}+k_{R2})}
+\end{align}
+となることに注意しておく。
+
+\subsection{共形境界条件と二重化のトリック}
+境界を持ったリーマン面$\Sigma$上の零質量自由スカラー場を考える。共形境界条件は、境界での単位接線・法線ベクトルを$t,n$として
+\begin{align}
+0=T_{\mu\nu}t^\mu n^\nu=(t^\mu \del_{\mu}X)(n^\nu \del_{\nu} X) \text{   on }\del\Sigma
+\end{align}
+となる。そこで例えばスカラー場$X$の境界条件として、
+\begin{align}
+&&&\text{Neumann境界条件}&& n^\mu \del_{\mu}X=0\ \text{ on }\del\Sigma &&\\
+&&&\text{Dirichlet境界条件}&& t^\mu \del_{\mu}X=0\ \text{ on }\del\Sigma \iff X=(\text{const}) \text{ on }\del\Sigma &&
+\end{align}
+を考えると、これらは共形境界条件になっている。
+
+\begin{ex}
+いま上半平面$\UHP$の境界である実軸上で$X$にNeumann境界条件
+\begin{align}
+\del X_L(x)=\overline{\del} X_R(x),\ (x\in\R)
+\end{align}
+を課すときを考える。(\ref{subsecdoubling})でのエネルギー運動量テンソルに対する二重化のトリックと同様に、スカラー場$X$についての二重化のトリック
+\begin{align}
+X_L(z)\coloneqq X_R(\overline{z})\ (\IM z<0)
+\end{align}
+を施すことで、$X_L$は下半平面へ解析接続される。同様に$X_R$は下半平面へ反正則に解析接続される。
+\end{ex}
+
+\subsection{頂点演算子の相関関数}
+\subsub{グリーン関数の一般論}
+以下では連結コンパクトRiemann面$(\Sigma,g)$上の零質量自由実スカラー場$X(z,\overline{z})$の理論を考える。$\Sigma$上の2点関数$\la X(x_1,\tau_1)X(x_2,\tau_2) \ra_\Sigma$はラプラシアンの積分核として与えられる。これを計算するためにまず場$X(x,\tau)$を$(\Sigma,g)$のラプラシアン$\laplacian$の固有関数で展開する。$-\laplacian$の固有値を$0=\omega_0<\omega_1<\omega_2<\cdots$として、各$\omega_i$に対応する固有空間の正規直交基底を$X_{i,I_i}$とする。とくにゼロモードはただ一つの基底を持つので単に$X_0$と書く\footnote{Hodge理論の結果から、向き付け可能連結コンパクトRiemann多様体の$-\laplacian$は、離散的で非有界で集積点を持たない非負のスペクトルをもち、各固有空間は有限次元で、線形独立な固有ベクトル全体は$L^2$空間の完全系を張ることが知られている。また、ラプラシアンのゼロモードの独立なベクトルの数はコホモロジーの次元に一致することも知られている。したがって$0$次形式のゼロモードの基底はただ一つ存在し、それは定数関数に他ならない。}。
+\begin{align}
+X(x,\tau)&=\sum_{i=0}^\infty\sum_{I_i} a_{i,I_i} X_{i,I_i}(x,\tau)\\
+\laplacian X_{i,I_i}&=-\omega_i^2 X_{i,I_i}\\
+\int_\Sigma d^2 x X_{i,I_i} X_{j,J_j} &= \delta_{ij}\delta_{I_i,J_j}\\
+X_0&=\left(\int_\Sigma d^2 x \right)^{-1/2}=(\Sigma\text{の面積})^{-1/2}
+\end{align}
+
+2点関数$\la X(x_1,\tau_1)X(x_2,\tau_2) \ra_\Sigma$を経路積分から計算するために、$X$と結合する外場$J$を加えた分配関数$Z[J]=\la \exp\left( i\int_\Sigma d^2 x J(x,\tau)X(x,\tau) \right) \ra_\Sigma$を考える。
+
+外場$J$の$X_{i,I_i}$成分を$J_{i,I_i}=\int_\Sigma d^2 x J(x,\tau)X_{i,I_i}(x,\tau)$とすれば、
+\begin{align}\label{generalpartitionfunc}
+Z_\Sigma[J]&=\int \mathcal{D}X \exp \left( \int_\Sigma(\frac{1}{8\pi}X\laplacian X+iJX)  \right)\notag\\
+&=\prod_{i,I_i}\int da_{i,I_i}\exp\left( -\frac{\omega_{i,I_i}^2}{8\pi}a_{i,I_i}^2+iJ_{i,I_i}a_{i,I_i} \right)\notag\\
+&=\int da_0\exp(ia_0 J_0)\prod_{i\neq 0, I_i}\int da_{i,I_i}\exp\left( -\frac{\omega_{i,I_i}^2}{8\pi}\left(a_{i,I_i}-i\frac{4\pi}{\omega_{i,I_i}^2}J_{i,I_i}\right)^2-\frac{2\pi}{\omega_{i,I_i}^2}J_{i,I_i}^2 \right)\notag\\
+&=i(2\pi)^2\delta^2(J_0)\prod_{i\neq 0,I_i}\left(\sqrt{\frac{\pi}{\omega_{i,I_i}^2/8\pi}}\right)^2 \exp\left(-\frac{2\pi}{\omega_{i,I_i}^2}J_{i,I_i}^2\right)\notag\\
+&=i(2\pi)^2\delta^2(J_0)\times \left(\text{det}' \frac{-\laplacian}{8\pi^2} \right)^{-1} \exp\left( \frac{1}{2}\int d^2 x_1 d^2 x_2 J(x_1,\tau_1)J(x_2,\tau_2)G'(x_1,\overline{x_1};x_2,\tau_2) \right)
+\end{align}
+と表示できる。ここで、$\text{det}'$は$0$を除く固有値の無限積を表す。また、途中で$i$倍が生じたのはEuclid化のためである。
+
+$G'(x_1,\tau_1;x_2,\tau_2)$は次で定義される。
+\begin{align}
+G'(x_1,\tau_1;x_2,\tau_2)=\sum_{i\neq 0,I_i}\frac{4\pi}{\omega_{i,I_i}^2}X_{i,I_i}(x_1,\tau_1)X_{i,I_i}(x_2,\tau_2)
+\end{align}
+これはゼロモードの寄与を除いたGreen関数であり、次を満たす。
+\begin{align}\label{greenfunc}
+-\frac{1}{4\pi}\laplacian|_{(x_1,\tau_1)}G'(x_1,\overline{x_1};x_2,\tau_2)=\delta^2(x_1-x_2,\tau_1-\tau_2)-X_0^2 
+\end{align}
+
+一般的な分配関数をGreen関数で書き直したので、次に頂点演算子の$N$点関数を考える。
+
+正則化されていない頂点演算子$e^{ik_i X(x_i,\tau_i)}$の挿入は外場$J(x,\tau)=k_i \delta^2(x-x_i,\tau-\tau_i)$の挿入に等しく、(\ref{generalpartitionfunc})から、
+\begin{align}
+\la \prod_{i=1}^{N} e^{ikX(x_i,\tau_i)} \ra_\Sigma&=i(2\pi)^2\delta^2\left(\sum_{i=1}^{N}k_i \right)X_0^{-2}\left(\text{det}' \frac{-\laplacian}{8\pi^2} \right)^{-1}\notag\\
+&\quad \times \exp\left( -\sum_{\substack{i,j=1\\i<j}}^{N}k_i k_j G'(x_i,\tau_i;x_j,\tau_j)-\frac{1}{2}\sum_{i=1}^{N}k_i^2 G'(x_i,\tau_i;x_i,\tau_i) \right)
+\end{align}
+となる。いま、自己相互作用項の$G'(x_i,\tau_i;x_i,\tau_i)$は発散するので、次のように正則化する。
+\begin{align}
+G_r'(x_1,\tau_1;x_2,\tau_2)=G'(x_1,\tau_1;x_2,\tau_2)+\log d^2((x_1,\tau_1),(x_2,\tau_2))
+\end{align}
+ただし$d((x_1,\tau_1),(x_2,\tau_2))$は$\Sigma$上の2点$(x_1,\tau_1),(x_2,\tau_2)$の測地距離を表す。この正則化は、平面では正規順序をとることに一致する。
+
+この正則化のもとで、頂点演算子$N$点関数は
+\begin{oframed}
+\begin{align}\label{vertexnptfunc}
+\la \prod_{i=1}^{N} \colon e^{ikX(x_i,\tau_i)}\colon  \ra_\Sigma&=i(2\pi)^2\delta\left(\sum_{i=1}^{N}k_i \right)X_0^{-2}\left(\text{det}' \frac{-\laplacian}{8\pi^2} \right)^{-1}\notag\\
+&\quad \times \exp\left( -\sum_{\substack{i,j=1\\i<j}}^{N}k_i k_j G'(x_i,\tau_i;x_j,\tau_j)-\frac{1}{2}\sum_{i=1}^{N}k_i^2 G_r'(x_i,\tau_i;x_i,\tau_i) \right)
+\end{align}
+\end{oframed}
+となる。
+
+以下ではこの式の具体例として、球面、平面、上半平面、トーラス、有限の長さの円筒での頂点演算子$N$点関数を計算する。
+
+\subsub{球面・平面での相関関数}
+球面$S^2$あるいは平面$\C$に無限遠点を付け加えてコンパクト化した空間上に等温座標$(z,\overline{z})$をとり、計量を$ds_\omega^2=e^{2\omega(z,\overline{z})}dzd\overline{z}$と表す\footnote{一意化定理から$S^2$に微分同相なRiemann多様体はすべて共形同値になる。つまり、どのような$\omega$をとっても$ds_\omega^2$は、$\R^3$に埋め込まれた半径$1$の球面の計量$ds^2=d\theta^2+\sin^2 \theta d\phi^2$に共形同値である。}。
+
+(\ref{greenfunc})の解は、
+\begin{align}
+G'(z_1,\overline{z_1};z_2,\overline{z}_2)&=-\log (|z_1-z_2|^2)+f(z_1,\overline{z}_1)+f(z_2,\overline{z}_2)-k\\
+f(z,\overline{z})&=\frac{X_0^2}{2}\int_\Sigma d^2 w \exp(2\omega(w,\overline{w}))\log (|z-w|^2)
+\end{align}
+となる。ただし定数$k$は$G'$と$X_0$を直交させるように決まり、$-\log (|z_1-z_2|^2)+f(z_1,\overline{z}_1)+f(z_2,\overline{z}_2)$の定数部分に他ならない。
+
+このとき$G_r'$は
+\begin{align}
+G_r'(z,\overline{z};z,\overline{z})&=-\log(|z-z|^2)+2f(z,\overline{z})-k+\log(e^{2\omega(z,\overline{z})}|z-z|^2)\notag\\
+&=2f(z,\overline{z})+2\omega(z,\overline{z})-k
+\end{align}
+となる。これを(\ref{vertexnptfunc})に代入すると、運動量保存$\delta\left(\sum_{i=1}^{N}k_i \right)$から$f(z,\overline{z})$と$k$の寄与は消えて、
+\begin{align}
+\la \prod_{i=1}^{N} \colon e^{ikX(z_i,\overline{z}_i)}\colon  \ra_{S^2}&=i(2\pi)^2\delta\left(\sum_{i=1}^{N}k_i \right)X_0^{-2}\left(\text{det}' \frac{-\laplacian}{8\pi^2} \right)^{-1}\notag\\
+&\quad \times \exp\left( -\sum_{i=1}^{N}k_i^2\omega(z_i,\overline{z}_i) \right)\prod_{\substack{i,j=1\\i<j}}^{N}|z_i-z_j|^{2k_ik_j}
+\end{align}
+となる。特に$S^2$として、平面$\C$に無限遠点を加えてコンパクト化したものを考える場合、曲率を無限遠方に押し付けるのが自然で、全ての頂点演算子の挿入点を含む領域で$\omega$が$0$になるような計量をとる。このとき頂点演算子$N$点関数は
+\begin{align}\label{vertexnptSphere}
+\la \prod_{i=1}^{N} \colon e^{ikX(z_i,\overline{z}_i)}\colon  \ra_{\C}&=i(2\pi)^2\delta\left(\sum_{i=1}^{N}k_i \right)X_0^{-2}\left(\text{det}' \frac{-\laplacian}{8\pi^2} \right)^{-1}\notag\\
+&\quad \times \prod_{\substack{i,j=1\\i<j}}^{N}|z_i-z_j|^{2k_ik_j}
+\end{align}
+となる。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{sphereCF.pdf}
+	\caption{バツ($\times$)印は球面や平面に挿入された頂点演算子を表している。}
+	\label{fig:spherecf}
+\end{figure}
+
+
+\subsub{上半平面での相関関数}
+上半平面の実軸上でNeumannまたはDirichlet境界条件を課して、二重化のトリックを使う。このとき$X_L(z)$と$X_R(\overline{z})$が同一視されたことにより、$(z,\overline{z})$の鏡像$(\overline{z},z)$の寄与がGreen関数に生じる。また、無限遠点をコンパクト化して曲率を無限遠に押し付ける。
+
+鏡像の寄与によりGreen関数は
+\begin{align}\label{scalarGreenUHP}
+G'(z_1,\overline{z_1};z_2,\overline{z}_2)&=-\log (|z_1-z_2|^2)\mp\log(|z_1-\overline{z}_2|^2)+(\text{運動量保存で消える項})\\
+G_r'(z,\overline{z};z,\overline{z})&=\mp\log(|z-\overline{z}|^2)+(\text{運動量保存で消える項})
+\end{align}
+となる。ただし$\mp$の負符号がNeumann境界条件、正符号がDirichlet境界条件に対応している。したがって例えばNeumann境界条件に対しての相関関数は、
+\begin{align}
+\la \prod_{i=1}^{N} \colon e^{ikX(z_i,\overline{z}_i)}\colon  \ra_{\UHP}&=i(2\pi)^2\delta\left(\sum_{i=1}^{N}k_i \right)X_0^{-2}\left(\text{det}' \frac{-\laplacian}{8\pi^2} \right)^{-1}\notag\\
+&\quad \times \prod_{i=1}^{N}|z_i-\overline{z}_i|^{k_i^2} \prod_{\substack{i,j=1\\i<j}}^{N}|z_i-z_j|^{2k_ik_j}|z_i-\overline{z}_j|^{2k_ik_j}
+\end{align}
+となる。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{UHPCF.pdf}
+	\caption{黒いバツ($\times$)印は上半平面に挿入された頂点演算子を表している。下半平面にある白いバツ印は、二重化のトリックによって生じた鏡像を表している。}
+	\label{fig:uhpcf}
+\end{figure}
+
+
+\subsub{トーラスでの相関関数}
+モジュライパラメータ$\tau=\tau_1+i\tau_2$を持ち、$z\sim z+2\pi \sim z+2\pi\tau$となる平坦トーラス$ds^2=dzd\overline{z}$上のスカラー場を考えると、$X_0=(4\pi^2\tau_2)^{-1/2}$であり、グリーン関数は(\ref{greenfunc})から次のように決まる。
+
+\begin{align}
+G'(z_1,\overline{z_1};z_2,\overline{z}_2)&=-\log \left(\left|\theta_1(\frac{z_1-z_2}{2\pi}|\tau) \right|^2\right)+\frac{(\IM(z_1-z_2) )^2}{2\pi\tau_2}-k(\tau,\overline{\tau})\\
+\theta_1(\nu|\tau)&=-\sum_{n=-\infty}^{\infty}\exp\left(\pi i\left(n+\frac{1}{2}\right)^2\tau+2\pi i\left(n+\frac{1}{2}\right)\left(\nu+\frac{1}{2}\right)\right)\\
+&=2e^{\pi i \tau/4}\sin\pi\nu \prod_{k=1}^{\infty}(1-e^{2\pi i k\tau})(1-e^{2\pi i\nu}e^{2\pi i k\tau})(1-e^{-2\pi i\nu}e^{2\pi i k\tau})
+\end{align}
+
+ただし定数$k(\tau,\overline{\tau})$は$G'$と$X_0$を直交させるように決まる。第$2$項の$\IM$は、テータ関数$\theta_1$の擬二重周期性(\ref{quasidoubleperiod})を補正して、$G'$をトーラス上の$1$価関数にするために現れている。
+
+また$G_r'$は
+\begin{align}
+G'(z,\overline{z};z,\overline{z})&=-\log \left(\left|\theta_1(\frac{z-z}{2\pi}|\tau) \right|^2\right)+\frac{(\IM(z-z) )^2}{2\pi\tau_2}-k(\tau,\overline{\tau})+\log(|z-z|^2)\notag\\
+&=-\log\left(\left|\eta(\tau)^3\right|^2\right)-k(\tau,\overline{\tau})
+\end{align}
+であり、これを(\ref{vertexnptfunc})に代入すると、運動量保存$\delta\left(\sum_{i=1}^{N}k_i \right)$から$k(\tau,\overline{\tau})$の寄与は消える。さらに運動量保存のもとで$\frac{1}{2}\sum_i k_i^2=-\sum_{i<j}k_ik_j$が成り立つから、
+\begin{align}
+\la \prod_{i=1}^{N} \colon e^{ikX(z_i,\overline{z}_i)}\colon  \ra_{T^2}&=i(2\pi)^2\delta\left(\sum_{i=1}^{N}k_i \right)X_0^{-2}\left(\text{det}' \frac{-\laplacian}{8\pi^2} \right)^{-1}\notag\\
+&\quad \times \prod_{\substack{i,j=1\\i<j}}^{N}\left|\frac{\theta_1(\frac{z_i-z_j}{2\pi}|\tau)}{\eta(\tau)^3}\exp\left(-\frac{(\IM(z_i-z_j) )^2}{4\pi\tau_2}\right) \right|^{2k_ik_j}
+\end{align}
+を得る。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{torusCF.pdf}
+	\caption{バツ($\times$)印はトーラスに挿入された頂点演算子を表している。}
+	\label{fig:toruscf}
+\end{figure}
+
+
+\subsub{有限の長さの円筒での相関関数}
+後の\ref{chap:doublequench}章への応用を考えて、$\RE z=-\pi/2,\pi/2$に境界をもち、$z\sim z+2\pi i\beta$と同一視の入った円筒$[-\pi/2,\pi/2]\times S_{\beta}^1$ (図\ref{fig:cylindercf})を考える。境界でNeumann境界条件またはDirichlet境界条件を課して二重化のトリックを使えば、モジュライパラメータ$i\beta$を持ち$z\sim z+2\pi \sim z+2\pi i\beta$となる平坦トーラスへ解析接続される。$(z,\overline{z})$の鏡像は
+\begin{align}
+(z',\overline{z}')=(\pi-\overline{z},\pi-z)
+\end{align}
+にあり、グリーン関数は
+\begin{align}\label{scalarGreenCylinder}
+G'(z_1,\overline{z_1};z_2,\overline{z}_2)&=-\log \left(\left|\theta_1(\frac{z_1-z_2}{2\pi}|i\beta) \right|^2\right)\mp\log \left(\left|\theta_1(\frac{z_1-z_2'}{2\pi}|i\beta) \right|^2\right)\notag\\
+&\quad +\frac{(\IM(z_1-z_2) )^2}{2\pi\beta}\pm\frac{(\IM(z_1-z_2') )^2}{2\pi\beta}+(\text{運動量保存で消える項})\\
+&=-\log \left(\left|\theta_1(\frac{z_1-z_2}{2\pi}|i\beta) \right|^2\right)\mp\log \left(\left|\theta_2(\frac{z_1+\overline{z}_2}{2\pi}|i\beta) \right|^2\right)\notag\\
+&\quad +\frac{(\IM(z_1-z_2) )^2}{2\pi\beta}\pm\frac{(\IM(z_1+\overline{z}_2) )^2}{2\pi\beta}+(\text{運動量保存で消える項})\\
+G_r'(z,\overline{z};z,\overline{z})&=-\log\left(\left|\frac{\del_\nu\theta_1(0|\tau)}{2\pi}\right|^2\right)\mp\log \left(\left|\theta_2(\frac{z+\overline{z}}{2\pi}|\tau) \right|^2\right)\notag\\
+&\quad +(\text{運動量保存で消える項})
+\end{align}
+である。ただし$\mp$の負符号がNeumann境界条件、正符号がDirichlet境界条件に対応している。
+
+例えばNeumann境界条件についての頂点演算子の$N$点関数は
+\begin{align}
+&\la \prod_{i=1}^{N} \colon e^{ikX(z_i,\overline{z}_i)}\colon  \ra_{[-\pi/2,\pi/2]\times S_\beta^1}\notag\\
+&=i(2\pi)^2\delta\left(\sum_{i=1}^{N}k_i \right)X_0^{-2}\left(\text{det}' \frac{-\laplacian}{8\pi^2} \right)^{-1}\notag\\
+&\quad \times \prod_{\substack{i,j=1\\i<j}}^{N}\left|\frac{\theta_1(\frac{z_i-z_j}{2\pi}|i\beta)}{\eta(i\beta)^3}\theta_2(\frac{z_i+\overline{z}_j}{2\pi}|i\beta)\exp\left(-\frac{(\IM (z_i-z_j) )^2}{2\pi\beta}\right) \right|^{2k_ik_j}\times \prod_{i=1}^{N}\left|\theta_2(\frac{z_i+\overline{z}_i}{2\pi}|i\beta)\right|^{k_i^2}
+\end{align}
+となる。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{cylinderCF.pdf}
+	\caption{$\RE z=-\pi/2,\pi/2$に境界をもち、$z\sim z+2\pi i\beta\  (\beta<1)$と同一視の入った円筒$[-\pi/2,\pi/2]\times S_{\beta}^1$に対する二重化のトリックの概略図。黒いバツ($\times$)印は有限の長さの円筒に挿入された頂点演算子を表している。白いバツ印は、二重化のトリックによって生じた鏡像を表している。}
+	\label{fig:cylindercf}
+\end{figure}
+
+
+\subsub{正則・反正則部分でウェイトが異なる場合}
+上の計算では、正則・反正則部分のウェイトが等しい場合$\colon e^{ikX(z,\overline{z})}\colon $を考えた。一般の頂点演算子$\colon e^{ik_L X_L(z)+ik_R X_R(\overline{z})}\colon $の$N$点関数は上の結果とほとんど同じものになる。具体的には、次の変更をすればよい。
+
+球面・平面・上半平面の場合には以下の変更をすればよい。
+\begin{align}
+|z_i-z_j|^{2k_ik_j}&\to (z_i-z_j)^{k_{Li}k_{Lj}}(\overline{z}_i-\overline{z}_j)^{k_{Ri}k_{Rj}}\\
+|z_i-\overline{z}_j|^{2k_ik_j}&\to (z_i-\overline{z}_j)^{k_{Li}k_{Rj}}(\overline{z}_i-z_j)^{k_{Ri}k_{Lj}}\\
+|z_i-\overline{z}_i|^{k_i^2}&\to |z_i-\overline{z}_i|^{k_{Li}k_{Ri}}
+\end{align}
+トーラス・有限サイズシリンダーの場合には、$F_{i}(z)=\theta_{i}(\frac{z}{2\pi}|i\beta)\exp(-\frac{(\IM(z))^2}{4\pi\beta})\ (i=1,2)$と書くと、
+\begin{align}
+|F_1(z_i-z_j)|^{2k_ik_j}&\to F_1(z_i-z_j)^{k_{Li}k_{Lj}}(F_1(\overline{z}_i-\overline{z}_j))^{k_{Ri}k_{Rj}}\\
+|F_2(z_i+\overline{z}_j)|^{2k_ik_j}&\to F_2(z_i+\overline{z}_j)^{k_{Li}k_{Rj}}F_2(\overline{z}_i+z_j)^{k_{Ri}k_{Lj}}\\
+|F_2(z_i+\overline{z}_i)|^{k_i^2}&\to |F_2(z_i+\overline{z}_i)|^{k_{Li}k_{Rj}}
+\end{align}
+と変更すればよい。
+
+\begin{ex}
+2次元零質量自由ディラック場のエンタングルメントエントロピーの計算で用いる式を導出しておく。
+
+$(k_L,k_R)=(k,-k)$のときの頂点演算子$V_{(k,-k)}(z,\overline{z})=\colon e^{ik (X_L(z)- X_R(\overline{z}))}\colon $の2点関数で、境界のある場合はNeumann境界条件をとったものを計算する。球面、平面、上半平面、トーラス、有限・無限に長い円筒において定数部分を除いて以下のようになる。
+\begin{oframed}
+\begin{description}
+	\item[球面・平面]
+	\begin{align}
+	\la V_{(k,-k)}(z_1,\overline{z_1}) V_{(-k,k)}(z_2,\overline{z_2}) \ra_{S^2,\C} \propto \left(\frac{1}{(z_1-z_2)(\overline{z}_1-\overline{z}_2)}\right)^{k^2}
+	\end{align}
+	
+	\item[上半平面]
+	\begin{align}
+	\la V_{(k,-k)}(z_1,\overline{z_1}) V_{(-k,k)}(z_2,\overline{z_2}) \ra_{D^2} \propto \left(\frac{(z_1-\overline{z}_2)(\overline{z}_1-z_2)}{(z_1-z_2)(\overline{z}_1-\overline{z}_2)(z_1-\overline{z}_1)(z_2-\overline{z}_2)}\right)^{k^2}
+	\end{align}
+	
+	\item[トーラス] \hfill\\
+	$\overline{\theta_1(\nu|i\beta)}=-\theta_1(-\overline{\nu}|i\beta)$と$\eta(i\beta)\in\R$に注意すると、モジュライパラメーターが純虚数のときの$2$点関数は次のようになる。
+	\begin{align}
+	\la V_{(k,-k)}(z_1,\overline{z_1}) V_{(-k,k)}(z_2,\overline{z_2}) \ra_{T^2} \propto \left(\frac{\eta(i\beta)^6}{\theta_1(\frac{z_1-z_2}{2\pi}|i\beta)\theta_1(\frac{\overline{z}_1-\overline{z}_2}{2\pi}|i\beta)}e^{\frac{(\IM(z_1-z_2) )^2}{2\pi\beta}}\right)^{k^2}
+	\end{align}
+	
+	\item[有限の長さの円筒]
+	\begin{align}
+	&\la V_{(k,-k)}(z_1,\overline{z_1}) V_{(-k,k)}(z_2,\overline{z_2}) \ra_{[-\pi/2,\pi/2]\times S_\beta^1}\notag\\
+	&\propto \left(\frac{\eta(i\beta)^6}{\theta_1(\frac{z_1-z_2}{2\pi}|i\beta)\theta_1(\frac{\overline{z}_1-\overline{z}_2}{2\pi}|i\beta)}
+	\frac{\theta_2(\frac{z_1+\overline{z}_2}{2\pi}|i\beta)\theta_2(\frac{\overline{z}_1+z_2}{2\pi}|i\beta)}{\theta_2(\frac{z_1+\overline{z}_1}{2\pi}|i\beta)\theta_2(\frac{z_2+\overline{z}_2}{2\pi}|i\beta)}\right)^{k^2}\label{fincylvertex2ptfunc}
+	\end{align}
+	
+	\item[無限に長い円筒] \hfill\\
+	トーラス上の相関関数で、実軸方向の周期を$2\pi$から$2\pi L$に変換して、$\beta\to\infty$の極限をとれば、半径$L$の無限に長い円筒$S_L^1\times \R$上の相関関数を得る。
+	\begin{align}
+	\la V_{(k,-k)}(z_1,\overline{z_1}) V_{(-k,k)}(z_2,\overline{z_2}) \ra_{S_L^1\times \R} \propto \left(\frac{1}{4L^2\sin\frac{z_1-z_2}{2L}\sin\frac{\overline{z}_1-\overline{z}_2}{2L}}\right)^{k^2}
+	\end{align}
+\end{description}
+\end{oframed}
+
+またこれらの2点関数の結果は、$(k_L,k_R)=(k,k)$のときの頂点演算子$V_{(k,k)}(z,\overline{z})=$\\$\colon e^{ik (X_L(z)+ X_R(\overline{z}))}\colon $の2点関数で、境界のある場合はDirichlet境界条件をとったものに等しいことにも注意しておく。
+\end{ex}
+
+\subsection{分配関数}
+\subsub{トーラス分配関数}
+スカラー場のトーラス分配関数は(\ref{generalpartitionfunc})や(\ref{torusPF})を計算すればよく、どちらでも同じ結果を得る。ここでは(\ref{generalpartitionfunc})を計算してみる。
+
+まず平坦トーラスの座標$w$として$w\sim w+2\pi \sim w+2\pi\tau$の同一視が入ったものを考えて、$w=\xi_1+\tau\xi_2,\overline{w}=\xi_1+\overline{\tau}\xi_2$で$\xi_1,\xi_2$を定義すると、$X$を
+\begin{align}
+X&=\sum_{m,n\in\Z} X_{m,n}e^{i(m\xi_1+n\xi_2)}\\
+&=\sum_{m,n\in\Z} X_{m,n}\exp\left( \frac{n-m\overline{\tau}}{2\tau_2}w-\frac{n-m\tau}{2\tau_2}\overline{w} \right)
+\end{align}
+とモード展開できる。ただし$X$は実スカラー場なので$X_{m,n}=\overline{X_{-m,-n}}$の条件がついている。
+
+固有モード$e^{i(m\xi_1+n\xi_2)}$は
+\begin{align}
+\int_{T^2} d^2 w e^{-i(m\xi_1+n\xi_2)}e^{i(m'\xi_1+n'\xi_2)}=4\pi^2\tau_2 \delta_{m,m'}\delta_{n,n'}
+\end{align}
+を満たす直交系になっている。したがって、(\ref{generalpartitionfunc})の分配関数で外場$J$を$0$としたものは
+\begin{align}
+Z_{T^2}&=\frac{\int \mathcal{D}X \exp \left( \int_\Sigma(\frac{1}{8\pi}X\laplacian X)\right)}{\text{ゼロモードの寄与}}\\
+&=\left({\det}' \frac{-\laplacian}{8\pi^2}\times 4\pi^2\tau_2 \right)^{-1}\\
+&=\left( \prod_{m,n\in\Z-\{(0,0)\}} \frac{|n-m\tau|^2}{8\pi^2 \tau_2^2}\times 4\pi^2\tau_2 \right)^{-1/2}\label{freebosontoruspartitionfunctiontotyuukeisann}\\
+&=\left(\prod_{n=1}^{\infty} \frac{n^2}{2\tau_2} \right)^{-1}\left( \prod_{m=1}^{\infty}\prod_{n\in \Z} \frac{|n-m\tau|^2}{2\tau_2} \right)^{-1}
+\end{align}
+となる。ただし(\ref{freebosontoruspartitionfunctiontotyuukeisann})で$1/2$乗になったのは$X_{m,n}=\overline{X_{-m,-n}}$の条件があるためである。
+
+
+無限積を$\zeta$関数正則化を用いて評価すれば、最終的にトーラス分配関数
+\begin{align}
+Z_{T^2}(\tau)=\frac{1}{\sqrt{8\pi^2 \tau_2} |\eta(\tau)|^2}
+\end{align}
+を得る。$\tau_2|\eta(\tau)|^4$はモジュラー不変であり、$Z_{T^2}$はたしかにモジュラー不変になっている。
+
+
+\subsub{円筒分配関数}
+$2$つの境界で同じ共形境界条件を課した有限の長さの円筒の分配関数も同様に(\ref{generalpartitionfunc})や(\ref{torusPF})を計算できて、どちらでも同じ結果を得る。
+
+円筒の座標を$w=x+i\tau,\  w\sim w+2\pi i\beta,\  -\pi/2\leq x \leq \pi/2$とすると、このときモジュライパラメータは純虚数$\tau=i\beta$である。
+
+$2$つの境界$x=\pm \pi/2$での境界条件として
+\begin{itemize}
+	\item ともにNeumann境界条件
+	\item ともにDirichlet境界条件$X(x=\pm\pi\beta/2)=x_{\pm}$
+	\item 一方がNeumann境界条件で、もう一方はDirichlet境界条件
+\end{itemize}
+を課したとき、それぞれの円筒分配関数は
+\begin{align}
+Z_{[-\pi/2,\pi/2]\times S_\beta^1,\text{NN}}(i\beta)&=\frac{1}{\sqrt{16\pi^2 \beta} \eta(i\beta)}\\
+Z_{[-\pi/2,\pi/2]\times S_\beta^1,\text{DD}}(i\beta)&=\frac{\exp\left(-\frac{(x_+-x_-)^2}{4\pi}\beta\right)}{\eta(i\beta)}\\
+Z_{[-\pi/2,\pi/2]\times S_\beta^1,\text{ND}}(i\beta)&=\sqrt{\frac{\eta(i\beta)}{\theta_4(0|i\beta)}}
+\end{align}
+となる。
+
+上の分配関数はいずれもモジュラー不変ではなく、さらに高温・低温極限$\beta\to 0,\infty$での漸近的な振る舞いも異なる。これは共形場理論がスケール対称性を持つことから、系の性質が境界条件に強く依存することが表れている。
+
+\section{2次元零質量自由Dirac場}\label{sec:2ddirac}
+ここでは\ref{sec:2dcft}で導入した2次元共形場理論の2つ目の具体例として、2次元零質量自由Dirac場について解説する。2次元零質量自由Dirac場は、ボソン化と呼ばれる対応関係によって2次元零質量自由スカラー場の理論に等価になる。このボソン化の手法は、2次元零質量自由Dirac場に対するエンタングルメントエントロピーの計算でも重要な役割を果たす。
+
+\subsection{理論の定義}
+2次元平面上の零質量自由Dirac場$\psi(z,\overline{z})$の理論を考える。
+\begin{align}
+S[X]_{\C}=\frac{1}{4\pi}\int_{\C} d^2 x \overline{\Psi}\gamma^\mu\del_\mu\Psi
+\end{align}
+ここで、ガンマ行列$\gamma^0,\gamma^1$は
+\begin{align}
+\gamma^0=\left(\begin{array}{cc}
+0 & 1 \\
+-1 & 0 \end{array}
+\right),\ \gamma^1=\left(\begin{array}{cc}
+0 & 1 \\
+1 & 0 \end{array}
+\right)
+\end{align}
+で定義している。また、$\del_t=-i\del_\tau$とユークリッド化して、
+\begin{align}
+\Psi=\left(\begin{array}{c}
+\tilde{\psi} \\
+\psi \end{array}
+\right),\ \overline{\Psi}=\left(\begin{array}{c}
+\overline{\psi} \\
+\overline{\tilde{\psi}}\end{array}
+\right)
+\end{align}
+と$2$つのWeylスピノルに分解すれば、作用は
+\begin{oframed}
+\begin{align}
+S[X]_{\C}=\frac{1}{4\pi}\int_{\C} d^2 z (\overline{\psi}\overline{\del}\psi+\overline{\tilde{\psi}}\del\tilde{\psi})
+\end{align}
+\end{oframed}
+となる。
+
+運動方程式は$\overline{\del}\psi=0=\overline{\del}\overline{\psi},\ \del\tilde{\psi}=0=\del\overline{\tilde{\psi}}$であり、$\overline{\psi}\psi, \overline{\tilde{\psi}}\tilde{\psi}$の演算子積展開は
+\begin{align}
+\overline{\psi}(z)\psi(0)\sim \frac{1}{z},\quad \overline{\tilde{\psi}}(\overline{z})\tilde{\psi}(0)\sim \frac{1}{\overline{z}}
+\end{align}
+となる。
+
+エネルギー運動量テンソルは
+\begin{align}
+T&=\frac{1}{2}\left((\del\overline{\psi})\psi-\overline{\psi}\del\psi\right)\\
+\overline{T}&=\frac{1}{2}\left((\overline{\del}\overline{\tilde{\psi}})\tilde{\psi}-\overline{\tilde{\psi}}\overline{\del}\tilde{\psi}\right)
+\end{align}
+であり、$TT,T\psi$の演算子積展開は
+\begin{align}
+T(z)T(0)&\sim \frac{1}{2z^4}+\frac{2}{z^2}T(0)+\frac{1}{z}\del T(0)\\
+T(z)\psi(0)&\sim \frac{1}{2z^2}\psi(0)+\frac{1}{z}\del\psi(0)
+\end{align}
+となる。したがって2次元零質量自由Dirac場は中心電荷$c=1$の共形場理論であり、場$\psi,\overline{\psi}$は共形ウェイト$(1/2,0)$のプライマリー場になる。同様に場$\tilde{\psi},\overline{\tilde{\psi}}$は共形ウェイト$(0,1/2)$のプライマリー場になる。
+
+\subsection{スピン構造}
+一般に、向き付け可能Riemann多様体$M$上にスピン構造(spin structure)が入るなら、その個数は$H_1(M,\Z_2)$の元の個数で与えられる。例えば、$d$次元平面$\R^d$、$d$次元球面$S^d$や、種数$g$のコンパクトRiemann面$\Sigma_g$にはつねにスピン構造を入れることができ、その個数はそれぞれ
+\begin{align}
+\R^d\text{に入るスピン構造の数}&=1\\
+S^1\text{に入るスピン構造の数}&=2\\
+S^d\ (d\geq 2)\text{に入るスピン構造の数}&=1\\
+\Sigma_g\text{に入るスピン構造の数}&=2^{2g}
+\end{align}
+である。
+
+したがって空間方向がコンパクト化された円筒上のDirac場の理論を考えると、$S^1\times \R=\{(x,\tau)\mid x\sim x+2\pi \}$には$2$個のスピン構造が入るので、場$\psi$が$x$方向に一周したときの境界条件として、
+\begin{oframed}
+\begin{align}
+&&&\textbf{NSセクター(Neveu-Schwartz sector)}&\Psi(x+2\pi,\tau)&=-\Psi(x,\tau)&&\\
+&&&\textbf{Rセクター(Ramond sector)}&\Psi(x+2\pi,\tau)&=\Psi(x,\tau)&&
+\end{align}
+\end{oframed}
+と、$2$つの境界条件を考えることができる。
+
+とくに平面上のDirac場を有限温度化して、時間方向がコンパクト化された円筒$\R\times S^1=\{(x,\tau)\mid \tau\sim \tau+\beta\}$上の経路積分を考える場合、フェルミオンの反可換性から、時間方向には反周期境界条件(=NSセクター)を課す必要がある。
+
+また、空間方向がコンパクト化された円筒$w=x+i\tau,\ x\sim x+2\pi$上の零質量自由ディラック場を共形変換$z=e^{-iw}$で平面$\C-\{0\}$に移したとき、$\psi,\tilde{\psi}$が共形ウェイト$1/2$のプライマリー場であることからNS/Rセクターの境界条件が
+\begin{align}
+&&&\text{NSセクター}&\Psi(e^{2\pi i}z,e^{-2\pi i}\overline{z})&=\Psi(z,\overline{z})&&\\
+&&&\text{Rセクター}&\Psi(e^{2\pi i}z,e^{-2\pi i}\overline{z})&=-\Psi(z,\overline{z})&&
+\end{align}
+となって、$-1$倍の付き方が逆になることに注意する。
+
+\subsection{ボソン化}
+平面$\C-\{0\}$上の2次元零質量自由スカラー/Dirac場を比べてみると、中心電荷はともに$c=1$で、さらにスカラー場の頂点演算子$V_{(1,0)}$とフェルミオン場$\psi,\overline{\psi}$の共形ウェイトはともに$(1/2,0)$である。
+\begin{oframed}
+特にNSセクターのフェルミオン場と頂点演算子は、$0$周りに一周したときの境界条件も同じで、相関関数が同じになるという意味で
+\begin{align}
+\psi(z)&\simeq \colon e^{iX_L(z)} \colon\\
+\overline{\psi}(z)&\simeq \colon e^{-i X_L(z)} \colon\\
+\tilde{\psi}(\overline{z})&\simeq \colon e^{iX_R(\overline{z})} \colon\\
+\overline{\tilde{\psi}}(\overline{z})&\simeq \colon e^{-i X_R(\overline{z})} \colon
+\end{align}
+という等価関係が成り立っている。つまり、NSセクターのフェルミオンの相関関数は、対応する頂点演算子の相関関数として計算しても同じ結果を得る。この対応はボソン・フェルミオン対応と呼ばれ、上の式により$\psi$を$:e^{iX}:$に対応づけることを\textbf{ボソン化(bosonization)}という。
+\end{oframed}
+
+\subsection{分配関数}
+\subsub{トーラス分配関数}
+2次元零質量自由Dirac場のトーラス分配関数を計算する。まずスピン構造について注意しておくと、円筒に入るスピン構造の数は$2$個だったのに対し、トーラスでは$4$個入る。これはトーラスが$T^2=S^1\times S^1$であり、小円・大円方向にそれぞれ独立にNS/Rセクターの境界条件をつけることができるためである。
+
+したがってトーラスの座標を$w=x+i\tau,\ w\sim w+2\pi\sim w+2\pi\tau$とすると、
+\begin{align}
+&&&\textbf{NS-NSセクター}&\Psi(w+2\pi)&=-\Psi(w)&\Psi(w+2\pi\tau)&=-\Psi(w)&&\\
+&&&\textbf{NS-Rセクター}&\Psi(w+2\pi)&=-\Psi(w)&\Psi(w+2\pi\tau)&=\Psi(w)&&\\
+&&&\textbf{R-NSセクター}&\Psi(w+2\pi)&=\Psi(w)&\Psi(w+2\pi\tau)&=-\Psi(w)&&\\
+&&&\textbf{R-Rセクター}&\Psi(w+2\pi)&=\Psi(w)&\Psi(w+2\pi\tau)&=\Psi(w)&&
+\end{align}
+という$4$つのスピン構造が入る。
+
+各セクターでのトーラス分配関数はスカラー場の場合と同様に、$\psi$と$\tilde{\psi}$のモードを足し上げて計算できて、
+\begin{align}
+Z_\text{NS-NS}(\tau)&=\left| \frac{\theta_3(0|\tau)}{\eta(\tau)} \right|^2\\
+Z_\text{NS-R}(\tau)&=\left| \frac{\theta_4(0|\tau)}{\eta(\tau)} \right|^2\\
+Z_\text{R-NS}(\tau)&=\left| \frac{\theta_2(0|\tau)}{\eta(\tau)} \right|^2\\
+Z_\text{R-R}(\tau)&=0=\left| \frac{\theta_1(0|\tau)}{\eta(\tau)} \right|^2
+\end{align}
+となる。
+
+これらの分配関数はモジュラー不変ではないが、スピン構造をすべて足し上げたもの
+\begin{align}
+Z_{T^2}(\tau)&=\frac{1}{2}\left(Z_\text{NS-NS}(\tau)+Z_\text{NS-R}(\tau)+Z_\text{R-NS}(\tau)+Z_\text{R-R}(\tau)\right)\notag\\
+&=\frac{1}{2}\left( \left| \frac{\theta_3(0|\tau)}{\eta(\tau)} \right|^2+\left| \frac{\theta_4(0|\tau)}{\eta(\tau)} \right|^2+\left| \frac{\theta_2(0|\tau)}{\eta(\tau)} \right|^2 \right)
+\end{align}
+はモジュラー不変な分配関数になる。
+
+\subsub{円筒分配関数}
+円筒の座標を$w=x+i\tau,\  w\sim w+2\pi i\beta,\  -\pi/2\leq x \leq \pi/2$とする。モジュライパラメータは純虚数$\tau=i\beta$であり、$2$つの境界$x=\pm \pi/2$でともに$\psi,\tilde{\psi}$のNeumann境界条件をとる。この円筒の上のNSセクターのDirac場の分配関数を計算する。
+
+いま$z=ie^{-iw}$の共形変換をつかって、円筒を上半平面上のバウムクーヘン型の領域(図\ref{fig:cyl2uhp})に移して二重化のトリックを使う。このとき上半平面を原点中心に一周するときに周期境界条件がつくので、トーラス上に二重化されたDirac場はNS-NSセクターのスピン構造をもつ。さらに、円筒上の場$\psi,\tilde{\psi}$は二重化により共通のものとなり、トーラス上の場は$\psi$のみ現れる。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{cyl2uhp.pdf}
+	\caption{左図は$w=x+i\tau,\  w\sim w+2\pi i\beta,\  -\pi/2\leq x \leq \pi/2$の円筒を表し、矢印の向きに沿って同一視されている。これを$z=ie^{-iw}$によって共形変換すると、右図のように上半平面上のバウムクーヘン型の領域に移る。}
+	\label{fig:cyl2uhp}
+\end{figure}
+
+したがって上の設定での円筒分配関数は、$Z_\text{NS-NS}(i\beta)$を$1/2$乗すればよく、
+\begin{align}
+Z_{[-\pi/2,\pi/2]\times S_\beta^1,\text{NN,NS}}(i\beta)= \frac{\theta_3(0|i\beta)}{\eta(i\beta)}\label{diracPFfincyl}
+\end{align}
+となる。
+
+
+\section{3次元反de Sitter時空(AdS$_3$)}\label{sec:ads3}
+ここでは3次元の真空のEinstein方程式の負の宇宙定数を持つ解であり、無限遠方でVirasoro対称性を実現する漸近的AdS$_3$時空について論じる。3次元Einstein-Hilbert作用はChern-Simons作用になっており、時空の内部には物理的自由度は無い。しかし時空の``境界''にはVirasoro対称性をもった物理的自由度(``boundary graviton'')が存在できる。この事実はAdS$_3$/CFT$_2$対応において本質的に重要な役割を果たす。
+
+\subsection{3次元重力理論とChern-Simons作用}
+\subsub{Einstein方程式}
+$3=1+2$次元重力理論を考える。Einstein-Hilbert作用は
+\begin{oframed}
+\begin{align}
+S[g]=\frac{1}{16\pi G}\int_{(M,g)}d^3 x \sqrt{-\det{g}}(R-2\Lambda)
+\end{align}
+\end{oframed}
+であり、真空のEinstein方程式は
+\begin{align}
+R_{\mu\nu}-\frac{1}{2}g_{\mu\nu}R+\Lambda g_{\mu\nu}=0
+\end{align}
+である。
+
+3次元でWeylテンソルは消えるので、Einstein方程式の真空解となる$g_{\mu\nu}$は
+\begin{align}
+R_{\mu\nu\rho\sigma}=\Lambda(g_{\mu\rho}g_{\sigma\nu}-g_{\mu\sigma}g_{\rho\nu})
+\end{align}
+を満たす。これは断面曲率が$\Lambda$の定曲率空間に他ならない。
+
+連結かつ単連結かつ測地的完備な定曲率Lorentz多様体は、$\Lambda=0$ならMinkowski空間に、$\Lambda>0$ならde Sitter(dS)空間に、$\Lambda<0$なら反de Sitter(anti de Sitter, AdS)空間に等長同型である。また、$d=3$においてそれぞれに作用する等長変換群は、MinkowskiがPoincare群$ISO(2,1)$、de Sitterが$SO(3,1)$、反de Sitterが$SO(2,2)$である。
+
+\subsub{Einstein-Hilbert作用の書き換え}
+境界のない向き付け可能擬Riemann多様体$M$の(局所的な開集合をとって)各点で正規直交基底をなすようなベクトル場の組${e_a^\mu(x)}$をとる。${e_a^\mu(x)}$は多脚場(vielbein)などと呼ばれる。
+\begin{align}
+g_{\mu\nu}e_a^\mu(x)e_b^\nu(x)=\eta_{ab}
+\end{align}
+計量$g$を使ってベクトル場と$1$形式を同一視して、$e_\mu^a=g_{\mu\nu}e_a^\nu$を定義する。定義から明らかに$e_\mu^a e_b^\mu=\delta_b^a,\ e_a^\mu e_\nu^a=\delta_\nu^\mu$が成り立つ。
+
+$e=\det(e_\mu^a)=\sqrt{-\det g}$とすれば、反対称テンソルは$\epsilon_{\mu_1\cdots \mu_d}=e^{-1}\epsilon_{a_1\cdots a_d}e_{\mu_1}^{a_1} \cdots e_{\mu_d}^{a_d}$と書ける。
+
+$M$の接束上のLevi-Civita接続を考えて、これを主$SO(p,q)$枠束に還元した$so(p,q)$値$1$形式を$\omega_\mu^{ab}$と書くと、$\omega$の曲率は
+\begin{align}
+R_{\mu\nu}^{ab}[\omega]&=(d\omega^{ab}+\omega^a_{\ c}\wedge\omega^{cb})_{\mu\nu}\notag\\
+&=\del_\mu \omega_\nu^{ab}-\del_\nu \omega_\mu^{ab}+\omega_\mu^{ac}\omega_{\nu\ c}^{\ b}-\omega_\nu^{ac}\omega_{\mu\ c}^{\ b}
+\end{align}
+となる。これはLevi-Civita接続の曲率と$R_{\ \ \mu\nu}^{\rho\sigma}=e_a^\rho e_b^\sigma R_{\mu\nu}^{ab}$と関係している。
+
+このとき$d$次元でのEinstein-Hilbert作用$S[g]=\frac{1}{16\pi G}\int_{(M,g)}d^d x \sqrt{-\det{g}}(R-2\Lambda)$は次のように書き換えられる。
+\begin{align}
+S[g]=\frac{1}{16\pi G}\int_{(M,g)} \epsilon_{a_1\cdots a_d}(e^{a_1}\wedge\cdots\wedge e^{a_{d-2}}\wedge R^{a_{d-1}a_d}[\omega]-\frac{2\Lambda}{d!}e^{a_1}\wedge\cdots\wedge e^{a_d})
+\end{align}
+
+とくに$d=3$なら、
+\begin{align}
+S[g]=\frac{1}{2\pi}\int_{(M,g)} \epsilon_{abc}(e^{a}\wedge R^{bc}[\omega]-\frac{\Lambda}{3}e^a\wedge e^b\wedge e^c)
+\end{align}
+である。さらに$\omega^{ab},R^{ab}$のHodge双対を
+\begin{align}
+\omega_a=\frac{1}{2}\epsilon_{abc}\omega^{bc},\ R_a=\frac{1}{2}\epsilon_{abc}R^{bc}=d\omega^a+\frac{1}{2}\epsilon_{abc}\omega^b\wedge \omega^c
+\end{align}
+で定義すると、これらは$so(p,q)\ (p+q=3)$ベクトル値$1$形式になっている。
+
+これを用いて3次元Einstein-Hilbert作用を
+\begin{align}
+S[g]=\frac{1}{16\pi G}\int_{(M,g)} (e^{a}\wedge R_a[\omega]-\frac{\Lambda}{3}\epsilon_{abc} e^a\wedge e^b\wedge e^c)
+\end{align}
+と書くことができる。
+
+\subsub{Chern-Simons作用}
+以下では$\Lambda<0$のときにEinstein-Hilbert作用がChern-Simons作用として書けることを見る。
+
+$SO(2,2)$のLie代数は$so(2,2)\simeq sl(2,\R)\directsum sl(2,\R)$と分解でき、各$sl(2,\R)$の生成子$J_a^\pm$を次を満たすようにとることができる。
+\begin{align}
+[J_a^+,J_b^+]=\epsilon_{abc}J^{c+},&&[J_a^-,J_b^-]=\epsilon_{abc}J^{c-},&&[J_a^+,J_b^-]=0\\
+\Tr J_a^+ J_b^+=\frac{1}{2}\eta_{ab},&&\Tr J_a^- J_b^-=\frac{1}{2}\eta_{ab},&&\Tr J_a^+ J_b^-=0
+\end{align}
+
+
+このとき各$SL(2,\R)$ゲージ場を
+\begin{align}
+A_\mu\coloneqq \left(\omega_\mu^a-\sqrt{-\Lambda}e_\mu^a\right) J_a^-,\ \overline{A}_\mu\coloneqq \left(\omega_\mu^a+\sqrt{-\Lambda}e_\mu^a\right) J_a^+
+\end{align}
+で定義すると、$\del M=\emptyset$より、Einstein-Hilbert作用はそれぞれの$SL(2,\R)$ゲージ場のChern-Simons作用の和として書ける。
+\begin{oframed}
+\begin{align}
+S[g]&=S_{CS}[A]-S_{CS}[\overline{A}]\\
+S_{CS}[A]&=\frac{k}{4\pi}\int_M \Tr \left( A\wedge dA+\frac{2}{3}A\wedge A\wedge A \right)\\
+k&=-\frac{1}{4G\sqrt{-\Lambda}}
+\end{align}
+\end{oframed}
+
+したがって3次元Einstein-Hilbert作用は多様体の大域的なトポロジーにしか依らず、内部には自由度が存在しない。これは3次元ではWeylテンソルが消えて重力波が存在しないこととも捉えられる。
+
+しかし多様体の境界には自由度が存在することができて、この自由度による計量のダイナミクスは\textbf{boundary graviton}と呼ばれる。
+
+\subsection{漸近的AdS$_3$時空}
+\subsub{global AdS計量とPoincare計量}
+\begin{oframed}
+$\R^{2,2}$の座標を$X^0,X^1,X^2,X^3$とし、計量を$ds^2=-(dX^0)^2-(dX^1)^2+(dX^2)^2+(dX^3)^2$とする。\textbf{AdS$_3$時空}を$\R^{2,2}$内の$3$次元部分多様体
+\begin{align}
+-(X^0)^2-(X^1)^2+(X^2)^2+(X^3)^2=-R_A^2
+\end{align}
+として定義する。
+\end{oframed}
+
+部分多様体全体を覆う座標$(t,\rho_\text{emb},\varphi)$として
+\begin{align}
+X^0&=R_A \cosh\rho_\text{emb} \cos t\\
+X^1&=R_A \cosh\rho_\text{emb} \sin t\\
+X^2&=R_A \sinh\rho_\text{emb} \cos \varphi\\
+X^3&=R_A \sinh\rho_\text{emb} \sin \varphi
+\end{align}
+が取れる。ただし$t\sim t+2\pi,\  \varphi\sim \varphi+2\pi$の周期性を持つので、時間的閉曲線が出ないように$t$方向に$\R\to S^1$の被覆をとる。このとき部分多様体上の誘導計量は
+\begin{align}
+ds^2=R_A^2 (-\cosh^2 \rho_\text{emb} dt^2+d\rho_\text{emb}^2+\sinh^2\rho_\text{emb}d\varphi^2)
+\end{align}
+となる。また、$r_{B}=R_A\sinh\rho_\text{emb}$と動径方向を変数変換すれば計量は
+\begin{oframed}
+\begin{align}\label{globalAdS}
+ds^2=-R_A^2\left(1+\frac{r_{B}^2}{R_A^2}\right)dt^2+\left(1+\frac{r_{B}^2}{R_A^2}\right)^{-1}dr_{B}^2+r_{B}^2d\varphi^2
+\end{align}
+\end{oframed}
+
+となる。この計量は\textbf{global AdS$_3$}計量やpure AdS$_3$計量と呼ばれ、$\Lambda=-1/R_A ^2<0$のEinstein方程式の真空解になっている。$R_A$は宇宙定数の平方根であるが、$\R^{2,2}$への埋め込みの大きさを決めるパラメータでもあり、$R_A$は\textbf{AdS半径}と呼ばれる。global AdS$_3$は図\ref{fig:globalads}のように、円筒として描かれる。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{globalAdS.pdf}
+	\caption{global AdS$_3$の図。円の動径方向が$r$軸に対応している。}
+	\label{fig:globalads}
+\end{figure}
+
+部分多様体の一部を覆う局所座標$(t_P,x_P,z_P),\ (z_P>0)$を
+\begin{align}
+X^0&=\frac{z_P}{2}\left( 1+\frac{R_A^2-t_P^2+x_P^2}{z_P^2} \right)\\
+X^1&=\frac{R_A t_P}{z_P}\\
+X^2&=\frac{z_P}{2}\left( 1+\frac{-R_A^2-t_P^2+x_P^2}{z_P^2} \right)\\
+X^3&=\frac{R_A x_P}{z_P}
+\end{align}
+で定義すると、計量は
+\begin{oframed}
+\begin{align}\label{Poincaremetric}
+ds^2=R_A^2\frac{-dt_P^2+dx_P^2+dz_P^2}{z_P^2}
+\end{align}
+\end{oframed}
+となる。これは\textbf{Poincare計量}と呼ばれる。$r_P=1/z_P$と変数変換すれば
+\begin{align}\label{Poincarer}
+ds^2=R_A^2\left(\frac{dr_P^2}{r_P^2}+r_P^2(-dt_P^2+dx_P^2)\right)
+\end{align}
+となる。global AdS$_3$は図\ref{fig:poincare}のように描かれる。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Poincare.pdf}
+	\caption{Poincare座標の図。$z_P$が大きくなるにつれて計量の$\det$が小さくなっていく。}
+	\label{fig:poincare}
+\end{figure}
+
+\subsub{漸近的AdS$_3$時空の定義}
+\begin{oframed}
+以下では円筒座標$(t,r,\varphi),\ \varphi\sim \varphi+2\pi$を取り、$r=(\text{一定})$の面上の光円錐座標を$x^\pm=\varphi\pm t,\ \del_{\pm}=\frac{1}{2}(\del_\varphi\pm \del_t)$で定義しておく。このとき、次の形を満たす計量を考える。
+\begin{align}
+&&ds^2&=R_A^2\left(\frac{dr^2}{r^2}+\gamma_{ij}(r,x^+,x^-)dx^i dx^j\right)&&(i,j=\pm)\\
+&&\gamma_{ij}dx^i dx^j&=r^2dx^- dx^+ +O(1)_{ij}dx^i dx^j&&(r\to\infty)
+\end{align}
+上の$r\to\infty$での境界条件を\textbf{Brown-Henneaux境界条件}\cite{Brown:1986nw}という。また、$r\to\infty$でこの計量はPoincare計量(\ref{Poincarer})に一致する。それゆえこの計量で表される時空は\textbf{漸近的AdS$_3$(asymptotic AdS)時空}と呼ばれる。
+
+$\Lambda=-1/R_A ^2<0$のEinstein方程式の解となる漸近的AdS$_3$時空の計量は次の形に限られる\cite{Banados:1998gg}ことが知られていて、\textbf{Fefferman-Graham計量}\cite{FeffermanGraham}と呼ばれる。
+\begin{align}\label{Feffermangraham}
+ds^2=R_A^2\left(\frac{dr^2}{r^2}+\left(rdx^+ +\frac{L(x^-)}{r}dx^- \right)\left(rdx^- +\frac{\overline{L}(x^+)}{r}dx^+ \right)\right)
+\end{align}
+ここで$L(x^-),\overline{L}(x^+)$はそれぞれ$x^-,x^+$のみの関数であることに注意しておく。
+\end{oframed}
+
+Poincare計量は$L=\overline{L}=0$のFefferman-Graham計量になっている。
+
+\subsub{漸近的Virasoro対称性}
+いま光円錐座標$(x^-,x^+,r)$での接空間のミンコフスキー計量を
+\begin{align}
+\eta=\left(\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \end{array}
+\right)
+\end{align}
+と定める。これに対応する$sl(2,\R)$の生成子を
+\begin{align}
+j_-=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+0 & 1 \\
+0 & 0\end{array}
+\right),\ 
+j_+=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+0 & 0 \\
+1 & 0\end{array}
+\right),\ 
+j_r=\frac{1}{2}\left(\begin{array}{cc}
+1 & 0 \\
+0 & -1\end{array}
+\right)
+\end{align}
+ととると、$[j_a,j_b]=\epsilon_{abc}j_c,\ \Tr(j_aj_b)=\frac{1}{2}\eta_{ab}$を満たしている。
+
+このとき計量(\ref{Feffermangraham})に対する$e^a,\omega^a$は
+\begin{align}
+e^-&=R_A\left(\frac{r}{\sqrt{2}}dx^-+\frac{\overline{L}(x^+)}{\sqrt{2}r}dx^+\right),&
+e^+&=R_A\left(\frac{r}{\sqrt{2}}dx^++\frac{L(x^-)}{\sqrt{2}r}dx^-\right),&
+e^r&=R_A\frac{dr}{r}\\
+\omega^-&=-\frac{r}{\sqrt{2}}dx^-+\frac{\overline{L}(x^+)}{\sqrt{2}r}dx^+,&
+\omega^+&=\frac{r}{\sqrt{2}}dx^+-\frac{L(x^-)}{\sqrt{2}r}dx^-,&
+\omega^r&=0
+\end{align}
+であり、対応する$SL(2,\R)$ゲージ場は
+\begin{align}
+A=\left(\begin{array}{cc}
+-\frac{1}{2r}dr & -rdx^- \\
+-\frac{L(x^-)}{r}dx^- & \frac{1}{2r}dr \end{array}
+\right),\ 
+\overline{A}=\left(\begin{array}{cc}
+\frac{1}{2r}dr & \frac{\overline{L}(x^+)}{r}dx^+ \\
+rdx^+ & -\frac{1}{2r}dr \end{array}
+\right)
+\end{align}
+となる。ここで$A,\overline{A}$は$x^-,x^+$成分に分解していることに注意する。ここで$x^\pm$を混ぜない$SL(2,\R)$ゲージ固定
+\begin{align}
+a=b^{-1}Ab+b^{-1}db,\ \overline{a}=b\overline{A}b^{-1}+bd(b^{-1}),\ b=\left(\begin{array}{cc}
+r^{1/2} & 0\\
+0 & r^{-1/2} \end{array}
+\right)
+\end{align}
+をすると$A,\overline{A}$の$r$依存性は消えて、それぞれ$x^-,x^+$のみの関数となる。
+\begin{align}
+a(x^-)=\left(\begin{array}{cc}
+0 & -1 \\
+-L(x^-) & 0 \end{array}
+\right)dx^-,\ 
+\overline{a}(x^+)=\left(\begin{array}{cc}
+0 & \overline{L}(x^+) \\
+1 & 0 \end{array}
+\right)dx^+
+\end{align}
+$a,\overline{a}$は境界の座標$x^\pm$にしか依存しておらず、したがってこの自由度がboundary gravitonを表している。
+
+いま$a,\overline{a}$の成分のうち、$L,\overline{L}$のみ変えるような無限小ゲージ変換$\delta a=\del_-\lambda+[a,\lambda],\delta \overline{a}=\del_+\overline{\lambda}+[\overline{a},\overline{\lambda}]$はそれぞれ$1$つの関数によって決まり、
+\begin{align}
+\lambda=\left(\begin{array}{cc}
+\frac{1}{2}\del_-\epsilon & -\epsilon \\
+-(L(x^-)-\frac{1}{2}\del_-^2)\epsilon & -\frac{1}{2}\del_-\epsilon \end{array}
+\right),\quad
+\overline{\lambda}=\left(\begin{array}{cc}
+-\frac{1}{2}\del_+\overline{\epsilon} & (\overline{L}(x^+)-\frac{1}{2}\del_+^2)\overline{\epsilon} \\
+\overline{\epsilon} & \frac{1}{2}\del_+\overline{\epsilon}
+\end{array}
+\right)
+\end{align}
+で与えられる。ただし$\epsilon,\overline{\epsilon}$はそれぞれ$x^-,x^+$のみの関数である。これにより$L,\overline{L}$は
+\begin{align}\label{infinitestimaltransfofL}
+\delta L&=\epsilon \del_- L +2L\del_- \epsilon -\frac{1}{2}\del_-^3\epsilon\\
+\delta \overline{L}&=\overline{\epsilon} \del_+ \overline{L} +2\overline{L}\del_+ \overline{\epsilon} -\frac{1}{2}\del_+^3\overline{\epsilon}
+\end{align}
+と変換する。このゲージ対称性は、boundary gravitonのもつ対称性を表している。
+
+ここで$T=-kL,\overline{T}=-k\overline{L}$として
+\begin{align}
+L_m&\coloneqq -\frac{1}{2\pi}\int_{0}^{2\pi} e^{im\varphi}T d\varphi\\
+\overline{L}_m&\coloneqq -\frac{1}{2\pi}\int_{0}^{2\pi} e^{im\varphi}\overline{T} d\varphi
+\end{align}
+とモード展開すると、$L_m,\overline{L}_m$は$SL(2,\R)$ゲージ固定をして得られるDirac括弧$\{\ ,\ \}$の交換関係
+\begin{align}
+i\{L_m,L_n\}&=(m-n)L_{m+n}-\frac{k}{2}m^3\delta_{m+n,0}\\
+i\{L_m,\overline{L}_n\}&=0\\
+i\{\overline{L}_m,\overline{L}_n\}&=(m-n)\overline{L}_{m+n}-\frac{k}{2}m^3\delta_{m+n,0}
+\end{align}
+を満たす。
+
+
+したがって、$L_m-\frac{k}{4}\delta_{m,0},\overline{L}_n-\frac{k}{4}\delta_{n,0}$は中心電荷
+\begin{oframed}
+\begin{align}
+c_A=-6k=\frac{3R_A}{2G}
+\end{align}
+\end{oframed}
+のVirasoro代数の生成子になっており、$c_A$はBrown-Henneaux中心電荷\cite{Brown:1986nw}と呼ばれることも多い。いま$L_m-\frac{k}{4}\delta_{m,0},\overline{L}_n-\frac{k}{4}\delta_{n,0}$が古典Virasoro代数の生成子になったが、このことは円筒上のCFT$_2$を平面に共形変換するとエネルギー運動量テンソルが$T_\text{円筒}=T_\text{平面}+c/24$と中心電荷のぶんだけずれることに似ている。
+
+3次元AdS重力には内部には自由度はないが、境界にはboundary gravitonの自由度を持つことができ、それはFefferman-Graham計量の$L,\overline{L}$によって記述される。さらにboundary gravitonの自由度もゲージ対称性を持ち、$L_m-\frac{k}{4}\delta_{m,0},\overline{L}_n-\frac{k}{4}\delta_{n,0}$がVirasoro代数の生成子となるのである。
+
+\subsection{様々な漸近的AdS$_3$計量}
+\subsub{BTZ計量}
+$T,\overline{T}$を用いてFefferman-Graham計量(\ref{Feffermangraham})は
+\begin{align}\label{FeffermangrahamT}
+ds^2&=R_A^2\left(\frac{dr^2}{r^2}+\left(rdx^+ +\frac{4G}{R_A r}T(x^-)dx^- \right)\left(rdx^- +\frac{4G}{R_A r}\overline{T}(x^+)dx^+ \right)\right) \notag\\
+&=\frac{R_A^2}{r^2}dr^2+4GR_A Tdx^{-2}+4GR_A \overline{T}dx^{+2}+\left(R_A^2 r^2+\frac{16G^2}{r^2}T\overline{T}\right)dx^-dx^+
+\end{align}
+と書ける。
+
+$r=1/z$と変数変換すれば、
+\begin{align}\label{FeffermangrahamZ}
+ds^2=\frac{R_A ^2}{z^2}dz^2+4GR_A Tdx^{-2}+4GR_A \overline{T}dx^{+2}+\left(\frac{R_A^2}{z^2}+16G^2 z^2 T(x^-)\overline{T}\right)dx^-dx^+
+\end{align}
+となる。また$r=e^\rho$と変数変換すれば、
+\begin{align}\label{FeffermangrahamRHO}
+ds^2&=R_A^2 d\rho^2+4GR_A Tdx^{-2}+4GR_A \overline{T}dx^{+2}+\left(R_A^2 e^{2\rho}+16G^2 e^{-2\rho}T\overline{T}\right)dx^-dx^+
+\end{align}
+となる。さらに、$T,\overline{T}$が定数のとき
+\begin{oframed}
+\begin{align}
+T+\overline{T}&=MR_A=\frac{r_+^2+r_-^2}{8GR_A}\\
+T-\overline{T}&=J=\frac{2r_+r_-}{8GR_A}\\
+r_\pm^2&=4GR_A^2M \left(1\pm\sqrt{1-(J/MR_A)^2}\right)
+\end{align}
+\end{oframed}
+で$r_\pm,M,J$を定義して、動径方向を
+\begin{align}
+r_{B}^2&=r_+^2\cosh^2(\rho-\rho_0)-r_-^2\sinh^2(\rho-\rho_0)\\
+e^{2\rho_0}&=(r_+^2-r_-^2)/(4R_A^2)
+\end{align}
+と変数変換すれば、
+\begin{oframed}
+\begin{align}\label{FeffermangrahamBTZ}
+ds^2&=-R_A^2(N(r_{B}))^2dt^2+(N(r_{B}))^{-2}dr_{B}^2+r_{B}^2(d\varphi+N^\varphi(r)dt)^2\\
+&=-\frac{(r_{B}^2-r_+^2)(r_{B}^2-r_-^2)}{r_{B}^2}dt^2+\frac{r_{B}^2R_A^2}{(r_{B}^2-r_+^2)(r_{B}^2-r_-^2)}dr_{B}^2+r_{B}^2\left(d\varphi-\frac{r_+r_-}{r_{B}^2R_A}dt\right)^2\\
+(N(r_{B}))^2&=-8MG+\frac{r_{B}^2}{R_A^2}+\frac{16G^2J^2}{r_{B}^2}=\frac{(r_{B}^2-r_+^2)(r_{B}^2-r_-^2)}{r_{B}^2R_A^2}\\
+N^\varphi(r_{B})&=-\frac{4GJ}{r_{B}^2}=-\frac{r_+r_-}{r_{B}^2R_A}
+\end{align}
+\end{oframed}
+となる。これはAdS$_3$時空でのKerrブラックホールを記述する計量で、\textbf{BTZ(Banados-Teitelboim-Zanelli)計量}\cite{Banados:1992wn}と呼ばれる。
+
+$|J|\leq MR_A$のとき、$M,J$はブラックホールのADM質量、角運動量に対応し、$r_+,r_-$はイベントホライズン、Cauchyホライズンに対応する。とくに$|J|=MR_A\iff r_+=r_-$のときのブラックホールは\textbf{極限(extremal) BTZブラックホール}と呼ばれる。$|J|< MR_A$のときは非極限(non-extremal) BTZブラックホールと呼ばれる。
+
+\begin{oframed}
+$J=0\iff r_-=0$のときの計量は
+\begin{align}
+ds^2=-(r_{B}^2-r_+^2)dt^2+\frac{R_A^2}{r_{B}^2-r_+^2}dr_{B}^2+r_{B}^2d\varphi^2
+\end{align}
+であり、さらに$z_{B}=R_A/r_{B},z_+=R_A/r_+$と変数変換すれば、
+\begin{align}\label{BTZblackbrane}
+ds^2=\frac{R_A^2}{z_{B}^2}\left( -\left(1-\frac{z_{B}^2}{z_+^2}\right)dt^2+\left(1-\frac{z_{B}^2}{z_+^2}\right)^{-1}dz_{B}^2+d\varphi^2 \right)
+\end{align}
+となる。この計量は\textbf{non-rotating BTZ計量}やAdS$_3$ Schwartzschild計量、あるいはAdS$_3$ black brane計量などと呼ばれる。
+\end{oframed}
+non-rotating BTZ時空は図\ref{fig:btz}のように、global AdSに穴が開いたような構造をしている。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{BTZ.pdf}
+	\caption{non-rotating BTZ時空の図。灰色の部分はホライズンの内側を表していて、そこでは計量は定義されていない。}
+	\label{fig:btz}
+\end{figure}
+
+特に$r_+=r_-=0$の計量
+\begin{align}\label{BPSBTZ}
+ds^2=\frac{R_A^2}{r_{B}^2}dr_{B}^2+r_{B}^2(-dt^2+d\varphi^2)
+\end{align}
+は零質量BTZ (massless BTZ)ブラックホールや\textbf{BPS(Bogomol'nyi–Prasad–Sommerfield) BTZブラックホール}と呼ばれる。これは極限BTZブラックホールになっている。
+
+\subsub{global AdS計量とPoincare計量}
+$M=-1/(8G),J=0$のときのBTZ計量はホライズン$r_\pm$を持たず、global AdS$_3$計量
+\begin{align}
+ds^2=-R_A^2\left(1+\frac{r_{B}^2}{R_A^2}\right)dt^2+\left(1+\frac{r_{B}^2}{R_A^2}\right)^{-1}dr_{B}^2+r_{B}^2d\varphi^2
+\end{align}
+になる。
+
+任意の漸近的AdS$_3$計量は局所的にはPoincare計量にゲージ同値である。したがってPoincare計量(\ref{Poincaremetric})とFefferman-Graham計量(\ref{FeffermangrahamZ})は変数変換で移りあえるが、実際これを実現する変数変換が知られており\cite{Roberts_2012}、以下で紹介する。
+
+Poincare計量
+\begin{align}
+ds^2=R_A^2\frac{dz_P^2+dx_P^-dx_P^+}{z_P^2}
+\end{align}
+に対して、$x^-,x^+$のみの関数$f(x^-),\overline{f}(x^+)$をとり、
+\begin{oframed}
+\begin{align}
+x_P^-&=f(x^-)-\frac{2z^2(f')^2\overline{f}''}{4f'\overline{f}'+z^2f''\overline{f}''}\label{robertsmap1}\\
+x_P^+&=\overline{f}(x^+)-\frac{2z^2(\overline{f}')^2f''}{4f'\overline{f}'+z^2f''\overline{f}''}\label{robertsmap2}\\
+z_P&=\frac{4z(f'\overline{f}')^{3/2}}{4f'\overline{f}'+z^2f''\overline{f}''}\label{robertsmapz}
+\end{align}
+\end{oframed}
+として座標変換$(x^\pm,z)\to (x_P^\pm,z_P)$を定義すると、Fefferman-Graham計量(\ref{FeffermangrahamZ})において
+\begin{align}
+\frac{4G}{R_A} T(x'^-)=\frac{3(f'')^2-2f'f'''}{4f'^2},\ \frac{4G}{R_A} \overline{T}(x'^+)=\frac{3(\overline{f}'')^2-2\overline{f}'\overline{f}'''}{4\overline{f}'^2}
+\end{align}
+としたものに変換される。$T,\overline{T}$の変換は無限小変換(\ref{infinitestimaltransfofL})を有限変換にしたものに他ならない。いま$c_A=-3R_A/2G$を用いて表せば、
+\begin{align}
+T(x'^-)&=\frac{c_A}{12}\{f(x'^-),x'^-\}\\
+T(x'^+)&=\frac{c_A}{12}\{f(x'^+),x'^+\}
+\end{align}
+と表すことができる。
+
+Poincare座標は$T=\overline{T}=0$のFefferman-Graham計量であり、$z\downarrow 0$での座標変換$(x'^\pm,z)\to (x_P^\pm,z_P)$は$x_P^-\to f(x'^-),x_P^+\to \overline{f}(x'^+)$であるから、上の$T,\overline{T}$の変換性は$z\downarrow 0$に存在する共形場理論のエネルギー運動量テンソルの共形変換$f$に対する変換性(\ref{transfofEmtensor})に一致している。
+
+\subsection{有限温度の計量とHawking-Page相転移}
+\subsub{有限温度の計量}
+global AdS$_3$ (\ref{globalAdS})の時間をユークリッド化$\tau=it$して、$\tau\sim \tau+2\pi \beta_A/R_A$の周期境界条件をつけて有限温度化したものを\textbf{thermal AdS$_3$}と呼ぶ。
+\begin{align}\label{tads}
+ds^2&=R_A^2\left(1+\frac{r_{B}^2}{R_A^2}\right)d\tau^2+\left(1+\frac{r_{B}^2}{R_A^2}\right)^{-1}dr_{B}^2+r_{B}^2d\varphi^2\\
+&\tau\sim \tau+2\pi\frac{\beta_A}{R_A},\quad \varphi\sim \varphi+2\pi
+\end{align}
+
+また、BTZブラックホール(\ref{FeffermangrahamBTZ})の時間をユークリッド化$\tau=it$して、$\tau\sim \tau+2\pi \beta_A/R_A$の周期境界条件をつけて有限温度化したものを\textbf{thermal BTZブラックホール}と呼ぶ。
+\begin{align}
+ds^2&=R_A^2(N(r_{B}))^2d\tau^2+(N(r_{B}))^{-2}dr_{B}^2+r_{B}^2(d\varphi-iN^\varphi(r)d\tau)^2\\
+&\tau\sim \tau+2\pi\frac{\beta_A}{R_A},\quad \varphi\sim \varphi+2\pi
+\end{align}
+
+ただし上の逆温度$\beta_A$は円錐特異性が出ないように
+\begin{align}
+\beta_A&=\frac{R_A^2 r_+}{r_+^2-r_-^2}
+\end{align}
+と決まる。$\beta_A^{-1}$は\textbf{Hawking温度}と呼ばれる。
+
+いま$J=0$のthermal non-rotating BTZブラックホールを考えると$\beta=R_A^2/r_+$となるので、計量は
+\begin{align}
+ds^2&=(r_{B}^2-r_+^2)d\tau^2+\frac{R_A^2}{r_{B}^2-r_+^2}dr_{B}^2+r_{B}^2d\varphi^2\\
+&=(r_{B}^2-(R_A^2\beta_A^{-1})^2)d\tau^2+\frac{R_A^2}{r_{B}^2-(R_A^2\beta_A^{-1})^2}dr_{B}^2+r_{B}^2d\varphi^2\label{adsbcftBTZmetric}
+\end{align}
+である。ここで座標変換
+\begin{align}
+\varphi'+i\tau'=-\frac{R_A}{i\beta_A}(\varphi+i\tau),\ r_B'=\frac{R_A}{r_+}\sqrt{r_B^2-r_+^2}
+\end{align}
+をすると、上の計量は
+\begin{align}
+ds^2&=R_A^2\left(1+\frac{r_{B}'^2}{R_A^2}\right)d\tau'^2+\left(1+\frac{r_{B}'^2}{R_A^2}\right)^{-1}dr_{B}'^2+r_{B}'^2d\varphi'^2\\
+&\tau'\sim \tau'+2\pi\frac{R_A}{\beta_A},\quad \varphi'\sim \varphi'+2\pi
+\end{align}
+となって、thermal AdS$_3$計量に局所的に一致する。この座標変換はモジュラー変換に対応しており、$\varphi'+i\tau'=-\frac{R_A}{i\beta_A}(\varphi+i\tau)$は時間$\tau$と空間$\phi$を入れ替える変換になっている。
+
+いま有限温度の計量を考えているので時空の境界はトーラスになっており、そのモジュライパラメーターは$i\beta_A/R_A$となっている。上の座標変換はトーラスのモジュラー変換$\beta_A/R_A\to R_A/\beta_A$に対応した座標変換になっている。したがって標語的には、「逆温度$\beta_A$のBTZブラックホールと逆温度$1/\beta_A$のThermal AdSはモジュラー変換によって等価である」ということが言えた。
+
+逆に、逆温度$\beta_A$のthermal AdS計量(\ref{tads})に対して上のモジュラー変換の逆変換を行うと、
+\begin{align}
+ds^2=(r_{B}'^2-\beta_A^2)d\tau'^2+\frac{R_A^2}{r_{B}'^2-\beta_A^2}dr_{B}'^2+r_{B}'^2d\varphi'^2\label{adsbcftTAdSmetric}
+\end{align}
+へ座標変換されることも分かる。
+
+
+\subsub{Bekenstein-Hawkingエントロピー}
+BTZブラックホールのHawking逆温度と\textbf{Bekenstein-Hawkingエントロピー}\cite{Bekenstein:1973ur},\cite{Hawking:1974sw}は
+\begin{oframed}
+\begin{align}
+\beta_A&=\frac{R_A^2 r_+}{r_+^2-r_-^2}\\
+S_{BH}&=\frac{\text{Area of Horizon}}{4G}=\frac{\pi r_+}{2G}=\frac{c_A\pi r_+}{3R_A}=\frac{c_A}{3}\pi \beta_A^{-1} R_A
+\end{align}
+\end{oframed}
+である。とくに$S_{BH}$の係数は無限遠でのVirasoro対称性の中心電荷で決まることが分かり、これは高温の2次元共形場理論でのエントロピー(\ref{cardyCE})の表式に一致している。また、極限BTZブラックホールの温度は$0$である。
+
+いま$T=L_0,\overline{T}=\overline{L}_0$であることに注意すれば、
+\begin{align}
+MR_A&=L_0+\overline{L}_0\\
+J&=L_0-\overline{L}_0
+\end{align}
+であり、これはトーラス上の2次元共形場理論の保存量であるハミルトニアン(\ref{hamtorus})と運動量(\ref{momtorus})に対応している。さらにBekenstein-Hawkingエントロピーは
+\begin{oframed}
+\begin{align}
+S_{BH}=2\pi \sqrt{\frac{c_A}{6}\left(\frac{MR+J}{2}\right)}+2\pi \sqrt{\frac{c_A}{6}\left(\frac{MR-J}{2}\right)}
+\end{align}
+\end{oframed}
+とも表せる。これは2次元共形場理論の高エネルギーのBoltzmannエントロピー(\ref{cardyMCE})の表式に一致している。これらの対応はStrominger\cite{Strominger:1997eq}によって指摘された。
+
+\subsub{Hawking-Page相転移}
+有限温度の計量に対してブラックホール熱力学を考えたい。
+
+境界をトーラスに持つような電荷・角運動量のない有限温度漸近的AdS$_3$計量の分配関数
+\begin{align}
+Z_{AdS_3}=\int_{\del M=T^2,J=Q=0}\mathcal{D}g \exp(-S_E[g])
+\end{align}
+を考える。ただし$S_E[g]$はユークリッド化されたEinstein-Hilbert作用である。
+
+平衡状態での系の唯一の保存量はADM質量$M$であり、自由エネルギーは
+\begin{align}
+F=-(2\pi\beta_A)^{-1}\log Z\sim (2\pi\beta_A)^{-1} I_E\sim M-(2\pi\beta_A)^{-1} S
+\end{align}
+と評価できる。
+
+Thermal AdS$_3$とthermal non-rotating BTZブラックホールについて、エントロピーと質量はそれぞれ
+\begin{align}
+&&S_{TAdS}&=0,& M_{TAdS}&=-\frac{1}{8G}&&\\
+&&S_{BTZ}&=\frac{\pi r_+}{2G}=\frac{\pi R_A^2}{2G\beta_A},& M_{BTZ}&=\frac{r_+^2}{8GR_A^2}=\frac{R_A^2}{8G\beta_A^2}&&
+\end{align}
+である。これを用いて自由エネルギーを比較すると、
+\begin{align}
+F_{TAdS}&\sim -\frac{1}{8G}\\
+F_{BTZ}&\sim -\frac{r_+^2}{8GR_A^2}=-\frac{1}{8G}\times\left(\frac{R_A}{\beta_A}\right)^2
+\end{align}
+と評価できる。
+
+したがって$\beta_A=R_A$を臨界温度として、$\beta_A>R_A$の低温では$F_{TAdS}<F_{BTZ}$となりthermal AdS$_3$が自由エネルギーの低い時空となる。逆に$\beta_A<R_A$の高温ではthermal non-rotating BTZブラックホールが自由エネルギーの低い時空となる。このように逆温度$\beta_A$の値によって安定なAdS時空が相転移する現象は\textbf{Hawking-Page相転移(Hawking-Page transition)}\cite{Hawking:1982dh}と呼ばれる。また、$\del F/\del T$は臨界温度で不連続であるから、thermal AdS$_3$とthermal non-rotating BTZブラックホールの相転移は$1$次相転移である。
+
+Thermal AdS$_3$とthermal non-rotating BTZブラックホールの熱容量は
+\begin{align}
+C_{TAdS}&=T\frac{\del S}{\del T}=0\\
+C_{BTZ}&=T\frac{\del S}{\del T}=\frac{\pi^2R_A^2}{G}T\geq 0
+\end{align}
+である。熱容量が非負なので、Thermal AdS$_3$もthermal non-rotating BTZブラックホールも熱力学的に安定な時空になる。しかし対照的に、平坦時空上のブラックホールは負の熱容量をもち、Hawking放射によって蒸発し、不安定な時空になる。
+
+\subsection{AdS空間での曲線の長さ}
+\subsub{global/Poincare座標の境界の2点間の測地線の長さ}
+Poincare座標$(t_P,x_P,z_P)$において、2点$(0,-d/2,\epsilon),(0,d/2,\epsilon),\ (\epsilon\to 0)$を結ぶ測地線は半円$x^2+z^2=d^2/4+\epsilon^2$で与えられ、その測地的距離は
+\begin{oframed}
+\begin{align}\label{geodlengthPoincare}
+\text{dist}((0,-d/2,\epsilon),(0,d/2,\epsilon))=2R_A \log\frac{d+\sqrt{d^2+4\epsilon^2}}{2\epsilon}\sim 2R_A\log\frac{d}{\epsilon}\quad (\epsilon\to 0)
+\end{align}
+\end{oframed}
+となる。
+
+また、global AdS座標$(t,\varphi,\rho_\text{emb})$の$\varphi$方向の周期を$L$倍して$\varphi\sim \varphi+2\pi L$とする。このときglobal AdS座標の2点$(0,\pm d/2,\rho_\infty)$の間の測地的距離は
+\begin{align}
+\text{dist}((0,d/2,\rho_\infty),(0,-d/2,\rho_\infty))=R_A \cosh^{-1}\left( 1+2\sinh^2\rho_\infty \sin^2\frac{d}{2L} \right)
+\end{align}
+で与えられる。$\rho_\infty$が境界でのカットオフを与えているが、これに対応するPoincare座標でのカットオフ$\epsilon$は、$\epsilon \to 0$の極限で
+\begin{align}
+\rho_\infty \sim \log \frac{L}{\epsilon}
+\end{align}
+で関係している。この極限でのglobal AdSでの測地的距離は
+\begin{oframed}
+\begin{align}\label{geodlengthGlobal}
+\text{dist}((0,d/2,\rho_\infty),(0,-d/2,\rho_\infty))&\sim R_A \log\left( 4\sinh^2 \rho_\infty \sin^2\frac{d}{2L} \right)\notag\\
+&\sim 2R_A\left(\frac{2L}{\epsilon}\sin\frac{d}{2L}\right) \quad (\epsilon\to 0)
+\end{align}
+\end{oframed}
+となる。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{adsgeod.pdf}
+	\caption{Poincare座標(左)とglobal AdS座標(右)における測地線の図。}
+	\label{fig:adsgeod}
+\end{figure}
+
+\subsub{non-rotating BTZブラックホールのホライズンの周りを$\varphi$方向に一周する円の長さ}
+non-rotating BTZブラックホールのホライズンを$\varphi$方向に一周する円の長さは、誘導計量が$ds^2|_\text{円}=r^2d\varphi^2$となることから、
+\begin{oframed}
+\begin{align}
+\text{length}(\text{BTZホライズンを一周する円})=2\pi r_+=2\pi R_A^2 \beta_A^{-1}\label{btzwindingcurvelength}
+\end{align}
+\end{oframed}
+となる。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{BTZwindingcurve.pdf}
+	\caption{non-rotating BTZブラックホールのホライズンを$\varphi$方向に一周する円の図。}
+	\label{fig:BTZwindingcurve}
+\end{figure}
+
+
+\section{AdS$_3$/CFT$_2$対応}\label{sec:adscft}
+ここでは\ref{sec:2dcft},\ref{sec:ads3}の内容を踏まえて、AdS$_3$/CFT$_2$対応を解説する。AdS/CFT対応は、一般には「AdS背景時空上の重力理論」と「AdSの``境界''上の共形場理論」の相関関数の対応を主張する。AdS/CFT対応は数学的に証明された主張ではなく、現時点では予想でしかないが、様々な具体例によって正しいことが信じられている。以下に見るように、AdS$_3$/CFT$_2$対応ではVirasoro代数の対応という非常に強力な対称性の対応関係が示唆される。
+
+\subsection{一般論}
+\subsub{AdS$_3$/CFT$_2$対応の証拠}
+超弦理論から低エネルギー極限としてAdS$_3$空間を得る方法は、D1-D5ブレーン系などの構成法が知られているが、これに対応する2次元共形場理論の具体的構成はよく分かっていない。しかし、\ref{sec:2dcft},\ref{sec:ads3}節の内容から、超弦理論から天下り的に出発しなくても、AdS$_3$時空とその境界上の2次元共形場理論との対応が予想される。具体的には、以下の対応関係がその予想の根拠となる。
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}\hline
+		 & AdS$_3$ &　CFT$_2$ \\ \hline
+		大域的対称性 & $SL(2,\C)$ & $PSL(2,\C)$\\\hline
+		Virasoro代数の中心電荷 & $c_A=3R_A/2G$ & $c$ \\\hline
+		温度 & $\beta_A/R_A$ & $\beta$ \\\hline
+		高温でのエントロピー & $(c_A/3)\pi\beta_A^{-1} R_A$ & $(c/3)\pi\beta^{-1}$ \\ \hline
+	\end{tabular}
+\end{table}
+AdS$_3$とCFT$_2$はその大域的対称性がどちらも$SL(2,\C)$であり、その拡張として、AdS$_3$の境界に定義されたBrown-Henneaux中心電荷$c_A$のVirasoro代数はCFT$_2$の中心電荷$c$のVirasoro代数に一致することが予想される。また、高温状態のエントロピーについては、CFT$_2$についてはCardy公式から$S\sim (c/3)\pi\beta^{-1}$であり、またAdS$_3$の高温状態とはBTZ相のことだったからそのエントロピーはBekenstein-Hawkingエントロピー$(c_A/3)\pi\beta_A^{-1} R_A$である。これら2つの表式は同じ形をしており、AdS$_3$の中心電荷$c_A$とCFT$_2$の中心電荷$c$の等価性を示唆している。
+
+\subsub{AdS$_3$に双対なCFT$_2$とは}
+半古典的なAdS$_3$重力理論に双対なCFT$_2$の満たすべき条件を考える。ただし、ここで言う「双対」とは相関関数の意味での対応関係を指しており、
+\begin{align}
+\la e^{\int d^4x \phi(x) \mathcal{O}(x)} \ra_\text{CFT}=Z_\text{AdS}(\phi(x))
+\end{align}
+が成り立つようなCFT$_2$とはどのようなものかを考える。この式はAdS$_{d+1}$/CFT$_d$対応を表す基本的な式で、\textbf{GKPW(Gukov-Klebanov-Polyakov-Witten)公式}\cite{Gubser_1998}\cite{Witten:1998qj}と呼ばれている。
+
+AdS$_3$重力理論での半古典極限とは、AdS半径がPlanck長よりも十分大きい$R_A\gg G$の極限である。このときBrown-Henneauxの関係式によって$c_A$がCFT$_2$の$c$に一致することを仮定すれば、$R_A\gg G$の半古典極限はCFT$_2$において中心電荷が$c\gg 1$となる極限に対応する。したがって、(半)古典重力双対を持つような2次元共形場理論の中心電荷は$c\gg 1$を満たすと予想される。
+
+またGKPW公式から、CFT$_2$の状態と半古典AdS$_3$重力理論の状態が対応する。重力理論の半古典極限においてその量子的ゆらぎは非常に小さく、重力理論の基底状態(=Einstein方程式の解)と励起状態のエネルギー差は非常に大きい。したがってこれに対応するCFT$_2$のエネルギー固有値のスペクトルも、基底状態と励起状態とで大きなエネルギー差を持ち、``sparse''なスペクトルを持つと予想される。
+
+したがって古典重力双対を持つような2次元共形場理論は少なくとも、「$c\gg 1$」でありかつ「sparseなスペクトル」を持つと予想される。
+
+\subsection{状態と時空の対応}
+GKPW公式は、CFT$_2$の基底状態と(古典)AdS$_3$時空の対応を述べている。直線/円周上のCFT$_2$のカノニカル分布に、相関関数の意味で対応する漸近的AdS$_3$時空は以下のものになる。ここで「直線/円周上の共形場理論」と書いたとき、空間$x$方向が直線/円周となっている共形場理論を指すことにする。例えば、円筒上の共形場理論の温度$\beta$のカノニカル分布$e^{\beta H}$に対応するRiemann面は、$x$方向が半径$L$にコンパクト化され、$\tau$方向が半径$\beta$にコンパクト化されたトーラスに対応する。
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}\hline
+		CFT$_2$ & AdS$_3$ \\ \hline
+		円周上の高温状態$e^{-\beta H},\ \beta<1$ & thermal non-rotating BTZ \\\hline
+		円周上の低温状態$e^{-\beta H},\ \beta>1$ & thermal AdS \\\hline
+		直線上の真空 & Poincare座標(global AdSの半分) \\\hline
+		\multirow{2}{*}{直線上の有限温度状態$e^{-\beta H}$} & Poincare座標の$z=z_H$にホライズンを持つ\\
+		& ブラックホール(non-rotating BTZの半分) \\ \hline
+	\end{tabular}
+\end{table}
+
+\section{AdS/BCFTの処方}\label{sec:adsbcft}
+ここでは境界つき2次元多様体上の境界共形場理論(BCFT)に対するAdS/CFT対応を考える。
+
+\subsection{AdS/BCFTの処方}
+\cite{Takayanagi:2011zk}で提案されたAdS/BCFTの処方では、境界共形場理論に双対な境界付きAdS重力を、BCFTの境界に対応する境界$Q$ (図\ref{fig:adsbcft})についてNeumann境界条件を課して決める。ただし、CFTが現れる$r\to \infty$の境界$M$ (図\ref{fig:adsbcft})では通常のAdS/CFT対応と同様にDirichlet境界条件を課す。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{adsbcft.pdf}
+	\caption{黄色の領域がBCFTを表しており、青色の領域が双対な境界付きAdS$_3$時空を表している。$M$は$r\to\infty$の漸近的な境界のことであり、$Q$はBCFTの境界に対応するAdS$_3$の境界である。}
+	\label{fig:adsbcft}
+\end{figure}
+
+Neumann境界条件を変分法で課すためには、通常Dirichlet境界条件に用いたGibbons-Hawking項\cite{York:1972sj}\cite{Gibbons:1976ue}を$1/2$倍して、
+\begin{align}
+S[g]=\frac{1}{16\pi G}\left(\int_\text{内部} \sqrt{-\det g}(R-2\Lambda) + \int_Q \sqrt{-\det h}K\right)
+\end{align}
+という作用を用いればよい\cite{Krishnan:2016mcj}。ただし$h$は境界$Q$上の誘導計量で、$Q$の単位法線ベクトルを$n$とすれば$h_{\mu\nu}=g_{\mu\nu}-n_\mu n_\nu$で定まる。また$K_{\mu\nu}=\nabla_\mu n_\nu$は外曲率(extrinsic curvature)と呼ばれ、さらに$K=h_{\mu\nu}K^{\mu\nu}$と書いた。
+
+$Q$上の単位接ベクトルを$e_a\ (a=1,\ldots, \dim Q)$で表し$K_{ab}=e_a^\mu e_b^\nu K_{\mu\nu}$と書く。
+このとき作用の変分は
+\begin{align}
+\delta_g S[g]&=\frac{1}{16\pi G}\left(\int_\text{内部} \sqrt{-\det g} \left( R^{\mu\nu}-\frac{1}{2}g^{\mu\nu}R+\Lambda g^{\mu\nu} \right)\delta g_{\mu\nu}\right.\notag\\
+&\left.+\frac{1}{2}\int_\text{Q} \sqrt{-\det h}h^{ab}\delta (K_{ab}-h_{ab}K)\right)
+\end{align}
+となり、$Q$でのNeumann境界条件
+\begin{align}
+K_{ab}-h_{ab}K=0
+\end{align}
+が課される。より一般には$S[g]$に$h$のみに依存する境界項$S_0[h]$を加える自由度がある。そこでBrown-Yorkテンソル\cite{Brown:1992br}と同様に、$S_0[h]$についてのエネルギー運動量テンソル
+\begin{align}
+T^Q_{ab}=\frac{2}{\sqrt{-\det h}}\frac{\delta S_0[h]}{\delta h^{ab}}
+\end{align}
+と定義すると、$Q$についてのより一般的な境界条件として
+\begin{align}
+K_{ab}-h_{ab}K=16\pi G T_{ab}^Q
+\end{align}
+を得る。
+
+\subsection{具体例}
+\subsub{上半平面}
+上半平面$\UHP$上の境界共形場理論に対応する境界付きAdS$_3$時空はどのようなものだろうか。$\UHP$上の境界共形場理論は、二重化のトリックを用いることで、Virasoro対称性が半分保たれた平面$\C$上の共形場理論に拡張できた。共形場理論のVirasoro代数はAdSの境界のVirasoro代数に対応するので、$\UHP$に対応する境界付きAdS空間として、上半分のPoincare AdS
+\begin{align}
+ds^2=R_A^2 \frac{dz^2+d\tau^2+dx^2}{z^2},\quad \tau,z>0
+\end{align}
+が対応すると自然に予想できる(図\ref{fig:uhpadsbcft})。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{UHPadsbcft.pdf}
+	\caption{上半平面$\UHP$上の境界共形場理論に対応する境界付きAdS$_3$時空の図。黄色の領域がBCFTを表しており、青色の平面はBCFTの境界に対応するAdS$_3$の境界$Q$を表している。}
+	\label{fig:uhpadsbcft}
+\end{figure}
+
+このとき時空の境界$Q$は$\tau=0$平面となっていて、$Q$上で常に$K_{ab}=0$となるから、たしかにNeumann境界条件$K_{ab}-h_{ab}K=0$を満たしている。
+
+\subsub{有限の長さの円筒}
+$z=-\pi/2,\pi/2$に境界をもち、$z\sim z+2\pi i\beta$と同一視の入った有限の長さの円筒$[-\pi/2,\pi/2]\times S_{\beta}^1$についても、二重化の方法を用いればトーラス$S^1\times S_{\beta}^1$に拡張できる。
+
+$r\to \infty$での境界をトーラスに持つようなユークリッド符号のAdS$_3$時空は、thermal AdS$_3$とthermal non-rotating BTZの2つがあり、温度$\beta$によってどちらに対応するかが決まる。
+\begin{description}
+\item[$\beta>1$のとき] \hfill\\
+$\beta>1$の低温では、thermal AdS$_3$がトーラスに対応する時空となる。したがって、円筒$[-\pi/2,\pi/2]\times S_{\beta}^1$に対応する時空は(\ref{adsbcftTAdSmetric})から、
+\begin{align}
+ds^2&=(r^2-\beta_A^2)d\varphi^2+\frac{R_A^2}{r^2-\beta_A^2}dr^2+r^2d\tau^2\\
+&\tau\sim \tau+2\pi,\quad -\frac{\pi R_A}{2\beta_A}<\varphi <\frac{\pi R_A}{2\beta_A}
+\end{align}
+となる。ただし、モジュラー変換によって時間$\tau$と空間$\varphi$が入れ替わるので、\ref{adsbcftTAdSmetric}での$\tau',\varphi'$をそれぞれ$\varphi,\tau$と書いている。$R_A/\beta_A<1$より、$\tau$方向がトーラスの大円をなし、$\varphi$方向がトーラスの小円をなす。この時空は$1$つの連結成分をもつ境界$Q$を持ち、図のようになる。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{adsbcftTAdS.pdf}
+	\caption{$\beta>1$の円筒に対応する、$1$つの境界を持ったAdS時空。$\varphi=\pm\pi/2$に$1$つの境界$Q$(青い面)を持ち、トーラスの小円の動径方向が$r$軸に対応している。}
+	\label{fig:adsbcfttads}
+\end{figure}
+
+\item[$\beta<1$のとき] \hfill\\
+$\beta<1$の高温では、thermal non-rotating BTZがトーラスに対応する時空となる。したがって、円筒$[-\pi/2,\pi/2]\times S_{\beta_A}^1$に対応する時空は(\ref{adsbcftBTZmetric})から、
+\begin{align}
+ds^2&=(r^2-(R_A^2\beta_A^{-1})^2)d\tau^2+\frac{R_A^2}{r^2-(R_A^2\beta_A^{-1})^2}dr^2+r^2d\varphi^2\\
+&\tau\sim \tau+2\pi\frac{\beta_A}{R_A},\quad -\frac{\pi}{2}<\varphi<\frac{\pi}{2} 
+\end{align}
+となる。$\beta_A/R_A<1$より、$\phi$方向がトーラスの大円をなし、$\tau$方向がトーラスの小円をなす。。この時空は$2$つの連結成分をもつ境界$Q$を持ち、図\ref{fig:adsbcftbtz}のようになる。
+\begin{figure}[h]
+	\centering
+	\begin{tabular}{c}
+	\begin{minipage}{0.50\hsize}
+		\centering
+		\includegraphics[width=\linewidth]{adsbcftBTZ.pdf}
+		\caption{$\beta<1$の円筒に対応する、$2$つの境界を持ったAdS時空。$\varphi=\pm\pi/2$に$2$つの境界$Q$(青い面)を持ち、トーラスの小円の動径方向が$r$軸に対応している。灰色の領域はBTZブラックホールのホライズン内部を表しており、この領域で計量は定義されていない。}
+		\label{fig:adsbcftbtz}
+	\end{minipage}
+	\begin{minipage}{0.50\hsize}
+		\centering
+		\includegraphics[width=\linewidth]{adsbcftBTZsection.pdf}
+		\caption{左図の$\tau=0,\pi\beta/R_A$面での断面図。$\varphi=\pm\pi/2$に境界$Q$(青い直線)を持つ。灰色の領域はBTZブラックホールのホライズン内部を表しており、この領域で計量は定義されていない。黄色の半円は$r\to \infty$の境界を表している。}
+		\label{fig:adsbcftbtzsection}
+	\end{minipage}
+	\end{tabular}
+	
+\end{figure}
+
+\end{description}

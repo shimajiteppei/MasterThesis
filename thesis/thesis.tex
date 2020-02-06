@@ -1,0 +1,112 @@
+\documentclass[11pt,a4paper]{jsreport}
+\pagestyle{headings}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ascmac}
+\usepackage{mathtools}
+\usepackage{here}
+\usepackage{cite}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{color}
+\usepackage{framed}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{EXAMPLE}{例}[chapter]
+\newenvironment{ex}{\begin{EXAMPLE}}{\hfill $\blacksquare$ \end{EXAMPLE}}
+
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\hypersetup{
+	colorlinks=true,
+	citecolor=blue,
+	linkcolor=red
+}
+
+\usepackage{multirow}
+\usepackage{listings}
+\lstset{
+	%プログラム言語(複数の言語に対応，C,C++も可)
+	language = Python,
+	%背景色と透過度
+	backgroundcolor={\color[gray]{.90}},
+	%枠外に行った時の自動改行
+	breaklines = true,
+	%自動改行後のインデント量(デフォルトでは20[pt])	
+	breakindent = 10pt,
+	%標準の書体
+	basicstyle = \ttfamily\scriptsize,
+	%コメントの書体
+	commentstyle = {\itshape \color[cmyk]{1,0.4,1,0}},
+	%関数名等の色の設定
+	classoffset = 0,
+	%キーワード(int, ifなど)の書体
+	keywordstyle = {\bfseries \color[cmyk]{0,1,0,0}},
+	%表示する文字の書体
+	stringstyle = {\ttfamily \color[rgb]{0,0,1}},
+	%枠 "t"は上に線を記載, "T"は上に二重線を記載
+	%他オプション：leftline，topline，bottomline，lines，single，shadowbox
+	frame = TBrl,
+	%frameまでの間隔(行番号とプログラムの間)
+	framesep = 5pt,
+	%行番号の位置
+	numbers = left,
+	%行番号の間隔
+	stepnumber = 1,
+	%行番号の書体
+	numberstyle = \tiny,
+	%タブの大きさ
+	tabsize = 4,
+	%キャプションの場所("tb"ならば上下両方に記載)
+	captionpos = t
+}
+
+
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\UHP}{\mathbb{H}}
+\newcommand{\tr}{\textnormal{tr}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\del}{\partial}
+\newcommand{\so}{\mathfrak{so}}
+\newcommand{\of}{\subset}
+\newcommand{\fo}{\supset}
+\newcommand{\subsub}[1]{\subsubsection{\underline{#1}}}
+\newcommand{\laplacian}{\Delta}
+\newcommand{\RE}{\text{Re}\,}
+\newcommand{\IM}{\text{Im}\,}
+\newcommand{\tensor}{\otimes}
+\newcommand{\directsum}{\oplus}
+\newcommand{\disjointunion}{\sqcup}
+\newcommand{\union}{\cup}
+\newcommand{\intersection}{\cap}
+\newcommand{\Tr}{\text{Tr}}
+
+
+
+\author{島地　哲平\thanks{京都大学物理学・宇宙物理学専攻 物理学第二分野 基礎物理学研究所素粒子論研究室; e-mail: teppei.shimaji@yukawa.kyoto-u.ac.jp / tetsu496magi@gmail.com}\thanks{これは2020年1月29日に提出した修士論文を修正したものです。大きく修正した箇所は、5.3節の「BTZ相での、中央の領域Cを囲む領域のEE」の記述と、最後の謝辞の2箇所です。「BTZ相での、中央の領域Cを囲む領域のEE」での記述において、提出したverでは熱力学極限をとらなくてもブラックホールエントロピーの半分になると記述していましたが、正しくないので修正しました。}}
+\title{修士論文(公開ver)\\重力双対を持つ2次元共形場理論における分離クエンチ}
+
+\setcounter{tocdepth}{2}
+\begin{document}
+	\maketitle
+	\input{intro}
+	\input{adscftreview}
+	\input{EEreview}
+	\input{singlequench}
+	\input{doublequench}
+	\input{summary}
+	\appendix
+	\input{thetafunc}
+	\input{quenchcal}
+	
+	\bibliographystyle{unsrt}
+	\bibliography{bib}
+\end{document}
