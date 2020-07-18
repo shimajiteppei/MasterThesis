@@ -1,4 +1,7 @@
 # MasterThesis
+
+My master thesis (Japanese). 
+
 しうろんです
 
 thesisフォルダには修正した修士論文とそのtexファイルを載せています。
